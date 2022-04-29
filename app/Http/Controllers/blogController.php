@@ -10,7 +10,8 @@ class blogController extends Controller
 {
     public function index(){
 
-        $resultado = blog::get();
+        $resultado = blog::paginate(6);
+       
         return view('blog',['resultado'=>$resultado]);
     }
 

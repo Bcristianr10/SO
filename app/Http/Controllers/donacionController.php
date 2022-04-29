@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class donacionController extends Controller
 {
     public function indexDonacion(){
-        $resultado = donacion::get(); 
+        $resultado = donacion::where('estado',1)->get(); 
 
         return view('donacion',['resultado'=>$resultado]);
     }
