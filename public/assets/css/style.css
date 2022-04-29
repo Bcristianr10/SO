@@ -1,0 +1,28 @@
+.display__none{
+    display: none;
+}
+.formulario__incorrecto{
+    border: 3px solid #bb2929;
+}
+.formulario__correcto{
+    border: 3px solid #1ed12d;
+}
+.validacion__estado{
+    /* display: none; */
+    position: absolute;
+    right: 25px;
+    bottom: 12px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+
+.formulario__group-correcto .validacion__estado{
+    color:#1ed12d;
+    opacity: 1;
+}
+
+.formulario__group-incorrecto .validacion__estado{
+    color:#bb2929;
+    opacity: 1;
+}
