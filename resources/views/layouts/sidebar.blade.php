@@ -87,6 +87,7 @@
                             <li><a href="/idiomas">Idiomas</a></li>
                             <li><a href="/emprendimientos">Emprendimientos</a></li>
                             <li><a href="/donaciones">Donaciones</a></li>
+                            <li><a href="/blog">Blog</a></li>
                             
                         </ul>
                     </li>

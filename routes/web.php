@@ -180,6 +180,19 @@ Route::post('/donaciones/save', [donacionController::class, 'save'])->name('dona
 Route::get('/donaciones/{id}', [donacionController::class, 'delete'])->name('donaciones.eliminar');
 Route::get('/donaciones/update/{id}', [donacionController::class, 'update'])->name('donaciones.update');
 
+Route::get('/blog', [blogController::class, 'indexBlog'])->name('adminBlog.index');
+Route::get('/blog/create', [blogController::class, 'create'])->name('adminBlog.create');
+Route::post('/blog/create', [blogController::class, 'insert'])->name('adminBlog.insert');
+Route::post('/blog/save', [blogController::class, 'save'])->name('adminBlog.save');
+Route::get('/blog/update/{id}', [blogController::class, 'update'])->name('adminBlog.update');
+Route::get('/blog/{id}/{idB}', [blogController::class, 'deleteImage'])->name('adminBlogImage.eliminar');
+Route::get('/blog/{id}', [blogController::class, 'delete'])->name('adminBlog.delete');
+
+
+
+
+
+
 
 
 Route::get('/plan/{id}', [blogController::class, 'planes'])->name('plan.planes');
