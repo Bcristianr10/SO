@@ -219,16 +219,10 @@ class emprendimientoController extends Controller
                 $resultado = emprendimiento::find($id);
 
                 return view('emprendimiento.update',['resultado'=>$resultado]);
-                
-
-
             }else{
 
                 return view('index');
-
             }
-            
-
         }else {
 
             return redirect(route('login.index'));
