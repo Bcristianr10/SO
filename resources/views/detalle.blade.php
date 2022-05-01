@@ -91,7 +91,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="blog-content-column">
+            <div class="">
                 <div class="blog-content-area post-items-style2">
                 
                 
@@ -135,98 +135,7 @@
                         </div>
                     </div>
                 </div>
-              <div class="sidebar-area">
-                <div class="widget">
-                  <h3 class="widget-title">Search Here</h3>
-                  <div class="separator-line">
-                    <img class="me-1" src="assets/img/shape/line-t2.png" alt="Image-Givest">
-                  </div>
-                  <div class="widget-search-box">
-                    <form action="#" method="post">
-                      <div class="form-input-item">
-                        <label for="search2" class="sr-only">Search Here</label>
-                        <input type="text" id="search2" placeholder="Search here">
-                        <button type="submit" class="btn-src">
-                          <i class="icofont-search-1"></i>
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-                <div class="widget">
-                  <h3 class="widget-title">Causes Categories</h3>
-                  <div class="separator-line">
-                    <img class="me-1" src="assets/img/shape/line-t2.png" alt="Image-Givest">
-                  </div>
-                  <div class="widget-category">
-                    <a href="causes-details.html">Clean Water <span>(18)</span></a>
-                    <a href="causes-details.html">Children Education <span>(06)</span></a>
-                    <a href="causes-details.html">Healty Food <span>(19)</span></a>
-                    <a href="causes-details.html">Food And Water <span>(27)</span></a>
-                    <a href="causes-details.html">National Charity <span>(27)</span></a>
-                  </div>
-                </div>
-                <div class="widget">
-                  <h3 class="widget-title">Urgent Causes</h3>
-                  <div class="separator-line">
-                    <img class="me-1" src="assets/img/shape/line-t2.png" alt="Image-Givest">
-                  </div>
-                  <div class="widget-causes-item">
-                    <div class="thumb">
-                      <img src="assets/img/causes/w1.jpg" alt="Givest-HasTech">
-                    </div>
-                    <div class="content">
-                      <h4 class="title"><a href="causes-details.html">Need School For Uganda Poor Children.</a></h4>
-                      <ul class="donate-info">
-                        <li class="info-item">
-                          <span class="info-title">Goal:</span>
-                          <span class="amount">$ 5,000</span>
-                        </li>
-                        <li class="info-item">
-                          <span class="info-title">Raised:</span>
-                          <span class="amount">$ 2,000</span>
-                        </li>
-                      </ul>
-                      <!-- Start Progress Item -->
-                      <div class="progress-item">
-                        <div class="progress-line">
-                          <div class="progress-bar-line" data-percent="75%"><span class="percent"></span></div>
-                        </div>
-                      </div>
-                      <form action="#">
-                        <div class="amount-info">
-                          <div class="donate-amount">$20</div>
-                          <div class="donate-amount">$35</div>
-                          <div class="donate-amount">$48</div>
-                          <div class="donate-amount me-0">$90</div>
-                          <div class="donate-amount donate-custom-amount">
-                            <input class="form-control" type="text" placeholder="Custome Amount">
-                          </div>
-                        </div>
-                        <a class="btn-theme btn-gradient btn-slide" href="#"><span>Donate Now <img class="icon icon-img" src="assets/img/icons/arrow-line-right2.png" alt="Icon"></span></a>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <div class="widget mb-0 pb-3">
-                  <h3 class="widget-title">Popular Tags</h3>
-                  <div class="separator-line">
-                    <img class="me-1" src="assets/img/shape/line-t2.png" alt="Image-Givest">
-                  </div>
-                  <div class="widget-tags">
-                    <ul>
-                      <li><a href="#/">Clean Water</a></li>
-                      <li><a href="#/">Education</a></li>
-                      <li><a class="style2" href="#/">Health</a></li>
-                      <li><a class="style2" href="#/">Medicine</a></li>
-                      <li><a href="#/">Poor</a></li>
-                      <li><a href="#/">Children</a></li>
-                      <li><a class="style2" href="#/">Charity</a></li>
-                      <li><a class="style2" href="#/">Non Profit</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>

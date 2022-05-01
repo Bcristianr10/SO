@@ -1044,6 +1044,11 @@ table p {
   padding: 2px;
   width: 50px;
 }
+
+.pagination-area nav .page-numbers .active {
+  background: var(--primary-color);
+  background: linear-gradient(to left, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
 .pagination-area nav .page-numbers li .page-number {
   background-color: #fff;
   color: #001d23;

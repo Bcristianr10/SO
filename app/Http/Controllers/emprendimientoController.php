@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class emprendimientoController extends Controller
 {
     public function indexEmprendimineto(){
-        $resultado = emprendimiento::get();        
+        $resultado = emprendimiento::where('estado',1)->get();        
         return view('emprendimiento',['resultado'=>$resultado]);
     }
 
