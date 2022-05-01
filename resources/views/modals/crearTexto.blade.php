@@ -38,7 +38,7 @@
                         <div class="mb-3 col-md-12 ">
                             <label >Texto</label>
                             <div class="col-lg-12" >
-                                <textarea class="form-control" id="elm1" name="txtTexto"></textarea>
+                                <textarea class="form-control" id="elm1" rows="5" name="txtTexto"></textarea>
                                 
                             </div>
                                 

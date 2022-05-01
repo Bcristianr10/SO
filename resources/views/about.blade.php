@@ -73,7 +73,7 @@
 
   <main class="main-content site-wrapper-reveal">
     <!--== Start Page Title Area ==-->
-    <section class="page-title-area" data-bg-img="{{asset('assets/images/photos/bg-page-title.jpg')}}">
+    <section class="page-title-area" data-bg-img="{{imagenesController::traerImagen('banner-nosotros')->ruta}}">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -101,7 +101,7 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="thumb thumb-style">
-              <img src="{{asset('assets/images/about/3.jpg')}}" alt="Image-Givest">
+              <img src=" @isset(imagenesController::traerImagen('principal_nosotros')->ruta){{imagenesController::traerImagen('principal_nosotros')->ruta}} @endisset" alt="Image-Givest">
             </div>
           </div>
           <div class="col-lg-8">

@@ -56,21 +56,16 @@
                   <div class="col-6 col-sm-6 col-md-6 pr-sm-5">
                     <ul class="nav-menu nav">
                       <li><a href="{{route('about')}}">{{idiomaController::traerTexto('nosotros',$idioma);}}</a></li>
-                      <!-- <li><a href="blog.html">Blog Post Terms</a></li>
-                      <li><a href="#/">Conditions</a></li>
-                      <li><a href="#/">Privacy Policy</a></li>
-                      <li><a href="#/">Documentation</a></li>
-                      <li><a href="#/">Donners</a></li> -->
+                      <li><a href="{{route('blog.index')}}">{{idiomaController::traerTexto('actividades',$idioma);}}</a></li>
+                      <li><a href="{{route('donacion.index')}}">{{idiomaController::traerTexto('donacion',$idioma);}}</a></li>
+                      
                     </ul>
                   </div>
                   <div class="col-6 col-sm-6 col-md-6 pl-sm-5">
                     <ul class="nav-menu nav align-right">
                       <li><a href="{{route('contact')}}">{{idiomaController::traerTexto('contactanos',$idioma);}}</a></li>
-                      <!-- <li><a href="#/">Quick Fundraise</a></li>
-                      <li><a href="#/">Give Donation</a></li>
-                      <li><a href="volunteer.html">Become Volunteer</a></li>
-                      <li><a href="causes-details.html">Food And Water</a></li>
-                      <li><a href="causes-details.html">Medical facilities</a></li> -->
+                      <li><a href="{{route('emprendimiento.index')}}">{{idiomaController::traerTexto('emprendimiento',$idioma);}}</a></li>
+                 
                     </ul>
                   </div>
                 </div>

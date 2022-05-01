@@ -162,72 +162,80 @@
       <div class="container">
         <div class="row icon-box-style1" data-aos="fade-up" data-aos-duration="1000">
           <div class="col-md-6 col-lg-3">
-            <div class="icon-box-item item-one mb-md-30"  style="background:linear-gradient(30deg, royalblue, #002C68);">
-              <div class="icon-box-top">
-                <!-- <div class="icon-box">
-                  <img class="icon-img" src="{{asset('assets/images/icons/s1.png')}}" alt="Icon">
-                </div> -->
-                <h2 class="text-white" style="font-weight: bold;">{{idiomaController::traerTexto('programa_de_salud',$idioma);}}</h2>
-              </div>
-              <div class="content">
-                <div class="separator-line">
-                  <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
+            <a href="{{route('plan.planes',['id'=>'programa_de_salud'])}}">
+              <div class="icon-box-item item-one mb-md-30"   style="background:linear-gradient(30deg, royalblue, #002C68);">
+                <div class="icon-box-top">
+                  <!-- <div class="icon-box">
+                    <img class="icon-img" src="{{asset('assets/images/icons/s1.png')}}" alt="Icon">
+                  </div> -->
+                  <h2 class="text-white" style="font-weight: bold;">{{idiomaController::traerTexto('programa_de_salud',$idioma);}}</h2>
                 </div>
-                <p class="text-center">{{idiomaController::traerTexto('texto_programa_de_salud',$idioma);}} </p>
-                
+                <div class="content">
+                  <div class="separator-line">
+                    <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
+                  </div>
+                  <p class="text-center">{{idiomaController::traerTexto('texto_programa_de_salud',$idioma);}} </p>
+                  
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           <div class="col-md-6 col-lg-3">
-            <div class="icon-box-item item-two mb-md-30" style="background:linear-gradient(30deg, #00c8fb,#00A0C9);">
-              <div class="icon-box-top">
-                <!-- <div class="icon-box">
-                  <img class="icon-img" src="{{asset('assets/images/icons/s2.png')}}" alt="Icon">
-                </div> -->
-                <h2 class="text-white" style="font-weight: bold;">{{idiomaController::traerTexto('programa_deportivo',$idioma);}}</h2>
-              </div>
-              <div class="content">
-                <div class="separator-line">
-                  <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
+            <a href="{{route('plan.planes',['id'=>'programa_deportivo'])}}">
+              <div class="icon-box-item item-two mb-md-30" style="background:linear-gradient(30deg, #00c8fb,#00A0C9);">
+                <div class="icon-box-top">
+                  <!-- <div class="icon-box">
+                    <img class="icon-img" src="{{asset('assets/images/icons/s2.png')}}" alt="Icon">
+                  </div> -->
+                  <h2 class="text-white" style="font-weight: bold;">{{idiomaController::traerTexto('programa_deportivo',$idioma);}}</h2>
                 </div>
-                <p class="text-center">{{idiomaController::traerTexto('texto_deporte',$idioma);}}</p>
-                <!-- <a href="causes-details.html" class="btn-theme btn-white btn-border btn-size-md">View Details <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right.png')}}" alt="Icon"></a> -->
+                <div class="content">
+                  <div class="separator-line">
+                    <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
+                  </div>
+                  <p class="text-center">{{idiomaController::traerTexto('texto_deporte',$idioma);}}</p>
+                  <!-- <a href="causes-details.html" class="btn-theme btn-white btn-border btn-size-md">View Details <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right.png')}}" alt="Icon"></a> -->
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           <div class="col-md-6 col-lg-3">
-            <div class="icon-box-item item-three mb-md-30" style="background:linear-gradient(30deg, royalblue, #002C68);">
-              <div class="icon-box-top">
-                <!-- <div class="icon-box">
-                  <img class="icon-img" src="{{asset('assets/images/icons/s2.png')}}" alt="Icon">
-                </div> -->
-                <h2 class="text-white" style="font-weight: bold;">{{idiomaController::traerTexto('programa_social',$idioma);}}</h2>
-              </div>
-              <div class="content">
-                <div class="separator-line">
-                  <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
+            <a href="{{route('plan.planes',['id'=>'programa_social'])}}">
+              <div class="icon-box-item item-three mb-md-30" style="background:linear-gradient(30deg, royalblue, #002C68);">
+                <div class="icon-box-top">
+                  <!-- <div class="icon-box">
+                    <img class="icon-img" src="{{asset('assets/images/icons/s2.png')}}" alt="Icon">
+                  </div> -->
+                  <h2 class="text-white" style="font-weight: bold;">{{idiomaController::traerTexto('programa_social',$idioma);}}</h2>
                 </div>
-                <p>{{idiomaController::traerTexto('texto_social',$idioma);}}</p>
-                <!-- <a href="causes-details.html" class="btn-theme btn-white btn-border btn-size-md">View Details <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right.png')}}" alt="Icon"></a> -->
+                <div class="content">
+                  <div class="separator-line">
+                    <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
+                  </div>
+                  <p>{{idiomaController::traerTexto('texto_social',$idioma);}}</p>
+                  <!-- <a href="causes-details.html" class="btn-theme btn-white btn-border btn-size-md">View Details <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right.png')}}" alt="Icon"></a> -->
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           <div class="col-md-6 col-lg-3">
-            <div class="icon-box-item item-two" style="background:linear-gradient(30deg, #00c8fb,#00A0C9);">
-              <div class="icon-box-top">
-                <!-- <div class="icon-box">
-                  <img class="icon-img" src="{{asset('assets/images/icons/s3.png')}}" alt="Icon">
-                </div> -->
-                <h2 class="text-white" style="font-weight: bold;">{{idiomaController::traerTexto('programa_educacion',$idioma);}}</h2>
-              </div>
-              <div class="content">
-                <div class="separator-line">
-                  <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
+            <a href="{{route('plan.planes',['id'=>'programa_educativo'])}}">
+              <div class="icon-box-item item-two" style="background:linear-gradient(30deg, #00c8fb,#00A0C9);">
+                <div class="icon-box-top">
+                  <!-- <div class="icon-box">
+                    <img class="icon-img" src="{{asset('assets/images/icons/s3.png')}}" alt="Icon">
+                  </div> -->
+                  <h2 class="text-white" style="font-weight: bold;">{{idiomaController::traerTexto('programa_educacion',$idioma);}}</h2>
                 </div>
-                <p>{{idiomaController::traerTexto('texto_educacion',$idioma);}}</p>
-                <!-- <a href="causes-details.html" class="btn-theme btn-white btn-border btn-size-md">View Details <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right.png')}}" alt="Icon"></a> -->
+                <div class="content">
+                  <div class="separator-line">
+                    <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
+                  </div>
+                  <p>{{idiomaController::traerTexto('texto_educacion',$idioma);}}</p>
+                  <!-- <a href="causes-details.html" class="btn-theme btn-white btn-border btn-size-md">View Details <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right.png')}}" alt="Icon"></a> -->
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -254,12 +262,23 @@
         <div class="row" data-aos="fade-up" data-aos-duration="1000">
           <div class="col-sm-8 offset-sm-2 col-md-8 offset-md-2 col-lg-4 offset-lg-0 col-xl-4">
             <div class="section-title text-center text-lg-start">
-              
+              <h3 class="title title-style mt-xl-30">{{idiomaController::traerTexto('patrocinadores',$idioma);}} <img class="img-shape" src="{{asset('assets/images/shape/3.png')}}" alt="Image-Givest"></h3>
             </div>
           </div>
           <div class="col-lg-8 col-xl-7 offset-xl-1">
             <div class="brand-logo-content">
-              
+              <div class="row row-cols-3 row-cols-sm-5">
+
+                @foreach (imagenesController::traerGaleria('patrocinadores',12) as $item)
+                  <div class="col">
+                    <div class="brand-logo-item">
+                      <img src="{{$item->ruta}}" alt="Image-Givest">
+                    </div>
+                  </div>
+                @endforeach
+                
+                
+              </div>
             </div>
           </div>
         </div>

@@ -146,6 +146,36 @@ class imagenesController extends Controller
 
     }
 
+    public function delete($id){
+
+        if(Auth::user()){ 
+
+            if(Auth::user()->rol_id == 1){
+
+                $imagen = imagen::find($id);
+                $imagen->delete();
+
+                return redirect()->back()->withErrors(['danger' => "la imagen eliminada Exitosamente"]);
+
+            }else{
+
+                return view('index');
+
+            }
+            
+
+        }else {
+
+            return redirect(route('login.index'));
+            
+        }
+
+        
+
+
+
+    }
+
     public static function traerImagen($nombre){
 
 
@@ -167,6 +197,8 @@ class imagenesController extends Controller
         return $imagen;
 
     }
+
+    
 
 
 

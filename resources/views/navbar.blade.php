@@ -50,8 +50,8 @@
 
                   <li class="has-submenu"><a>{{idiomaController::traerTexto('idioma',$idioma);}}</a>
                     <ul class="submenu-nav">
-                      <li><a href="idioma/ESP">{{idiomaController::traerTexto('espanol',$idioma);}}</a></li>
-                      <li><a href="idioma/ENG">{{idiomaController::traerTexto('ingles',$idioma);}}</a></li>
+                      <li><a href="{{route('idioma.idioma',['id'=>'ESP'])}}">{{idiomaController::traerTexto('espanol',$idioma);}}</a></li>
+                      <li><a href="{{route('idioma.idioma',['id'=>'ENG'])}}">{{idiomaController::traerTexto('ingles',$idioma);}}</a></li>
                       
                     </ul>
                   </li>

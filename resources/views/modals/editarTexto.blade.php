@@ -39,7 +39,7 @@
                         <div class="mb-3 col-md-12 ">
                             <label for="example-password-input1" class="form-label">Texto</label>
                             <div class="">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="txtTexto">{{$fila->texto}}</textarea>
+                                <textarea class="form-control" rows="5" placeholder="Leave a comment here" id="floatingTextarea" name="txtTexto">{{$fila->texto}}</textarea>
                                 
                             </div>
                         </div>

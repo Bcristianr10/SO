@@ -74,10 +74,10 @@
                                            
                                             <button type="button" class="btn btn-danger btn-sm"  
                                                             data-toggle="modal" data-animation="bounce"
-                                                            data-target=".eliminarEstadoModal{{$fila->id}}">
+                                                            data-target=".eliminarImagenModal{{$fila->id}}">
                                                 <i class="fa fa-trash"></i>
                                             </button>
-                                            @include('modals.eliminarEstado') 
+                                            @include('modals.eliminarImagen') 
                                                
                                                                                        
                                         </td>                                

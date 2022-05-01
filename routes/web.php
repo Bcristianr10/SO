@@ -147,7 +147,7 @@ Route::get('/imagenes', [imagenesController::class, 'index'])->name('imagenes.in
 Route::get('/imagen/create', [imagenesController::class, 'create'])->name('imagen.create');
 Route::post('/imagen/create', [imagenesController::class, 'insert'])->name('imagen.insert');
 Route::post('/imagen/save', [imagenesController::class, 'save'])->name('imagen.save');
-
+Route::get('/imagen/delete/{id}', [imagenesController::class, 'delete'])->name('imagen.eliminar');
 
 
 Route::get('/idioma/{id}', [idiomaController::class, 'idioma'])->name('idioma.idioma');
@@ -181,6 +181,8 @@ Route::get('/donaciones/{id}', [donacionController::class, 'delete'])->name('don
 Route::get('/donaciones/update/{id}', [donacionController::class, 'update'])->name('donaciones.update');
 
 
+
+Route::get('/plan/{id}', [blogController::class, 'planes'])->name('plan.planes');
 
 
 

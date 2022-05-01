@@ -22,4 +22,10 @@ class blogController extends Controller
         return view('detalle',['resultado'=>$resultado]);
     }
 
+    public function planes($id){
+
+        return view('planes',['plan'=>$id]);
+
+    }
+
 }

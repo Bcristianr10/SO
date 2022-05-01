@@ -122,10 +122,11 @@ class emprendimientoController extends Controller
             if(Auth::user()->rol_id == 1){
 
                 $obj_emprendimiento = emprendimiento::find($request->txtId);
-                $file = $request->file('archivo');   
+                $files = $request->file('archivo');   
                 if($file != null){
 
-                    
+
+                                        
 
                     $file_name = now()->toArray()['day'].'_'.now()->toArray()['month'].'_'.mt_rand(1000,10000);
                     $extencion= $file->getClientOriginalExtension();
