@@ -122,7 +122,7 @@ class emprendimientoController extends Controller
             if(Auth::user()->rol_id == 1){
 
                 $obj_emprendimiento = emprendimiento::find($request->txtId);
-                $files = $request->file('archivo');   
+                $file = $request->file('archivo');   
                 if($file != null){
 
 

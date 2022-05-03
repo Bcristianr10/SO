@@ -18,7 +18,7 @@
         $banner = imagenesController::traerImagen('banner_1');
     
     ?>
-    <title>{{idiomaController::traerTexto('actividades',$idioma);}} | Organización Sin Fronteras</title>
+    <title>{!!idiomaController::traerTexto('actividades',$idioma);!!} | Organización Sin Fronteras</title>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="{{asset('assets/images/Logol2.png')}}" type="image/x-icon" />
@@ -72,13 +72,13 @@
 
   <main class="main-content site-wrapper-reveal">
     <!--== Start Page Title Area ==-->
-    <section class="page-title-area" data-bg-img="{{$banner->ruta}}">
+    <section class="page-title-area" data-bg-img="@if(isset($banner)){{$banner->ruta}}@else{{asset('assets/images/photos/bg-page-title.jpg')}}@endif">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <div class="page-title-content text-center">
-              <h2 class="title text-white">{{idiomaController::traerTexto('actividades',$idioma);}}</h2>
-              <div class="bread-crumbs"><a href="{{route('index')}}">{{idiomaController::traerTexto('inicio',$idioma);}}<span class="breadcrumb-sep">//</span></a><span class="active">{{idiomaController::traerTexto('actividades',$idioma);}}</span></div>
+              <h2 class="title text-white">{!!idiomaController::traerTexto('actividades',$idioma);!!}</h2>
+              <div class="bread-crumbs"><a href="{{route('index')}}">{!!idiomaController::traerTexto('inicio',$idioma);!!}<span class="breadcrumb-sep">//</span></a><span class="active">{!!idiomaController::traerTexto('actividades',$idioma);!!}</span></div>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@
                         </div>
                         <div class="content">
                             <div class="meta">
-                            <a class="post-category" href="{{route('blog.detalle',['id'=>$resultado->id])}}">{{idiomaController::traerTexto($resultado->programa,$idioma);}}</a>
+                            <a class="post-category" href="{{route('blog.detalle',['id'=>$resultado->id])}}">{!!idiomaController::traerTexto($resultado->programa,$idioma);!!}</a>
                             <a class="post-author" href="{{route('blog.detalle',['id'=>$resultado->id])}}"><span class="icon"><img class="icon-img" src="{{asset('assets/images/icons/admin1.png')}}" alt="Icon-Image"></span>By: {{$resultado->escritor}}</a>
                             </div>
                             <h2 class="title">{{$resultado->titulo_1}}</h2>
@@ -118,11 +118,28 @@
                             <p>{{$resultado->texto_2}}</p>
                             
                             <div class="row mb-32">
-                                @foreach ($resultado->galeria() as $item)
-                                    <div class="col-sm-4">
-                                        <img class="w-100 mb-xs-30" src="{{$item->ruta}}" alt="Image-Givest">
+                               
+                              <div class="col-xl-12">
+                                <div class="team-member-items">
+                                  <div class="swiper-container team-slider-container">
+                                    <div class="swiper-wrapper team-slider">
+                    
+                                      @foreach ($resultado->galeria() as $item)
+                                        <div class="swiper-slide team-member">
+                                          <div class="thumb">
+                                            <img src="{{$item->ruta}}" alt="Image" height="445" width="330">
+                                            
+                                          </div>
+                                          
+                                        </div>
+                                      @endforeach
+                                      
+                                      
                                     </div>
-                                @endforeach
+                                  </div>
+                                </div>
+                              </div>
+                                
                                 
                                 
                             </div>

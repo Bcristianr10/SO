@@ -13,10 +13,13 @@
       }else{
         $idioma = 'ESP';
       }
+      use App\Http\Controllers\imagenesController; 
+        
+      $banner = imagenesController::traerImagen('banner_donacion');
       
     
     ?>
-    <title>{{idiomaController::traerTexto('donacion',$idioma);}} | Organización Sin Fronteras</title>
+    <title>{!!idiomaController::traerTexto('donacion',$idioma);!!} | Organización Sin Fronteras</title>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="{{asset('assets/images/Logol2.png')}}" type="image/x-icon" />
@@ -70,13 +73,13 @@
 
   <main class="main-content site-wrapper-reveal">
     <!--== Start Page Title Area ==-->
-    <section class="page-title-area"data-bg-img="{{asset('assets/images/photos/bg-page-title.jpg')}}">
+    <section class="page-title-area"data-bg-img="@if(isset($banner)){{$banner->ruta}}@else{{asset('assets/images/photos/bg-page-title.jpg')}}@endif">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <div class="page-title-content text-center">
-              <h2 class="title text-white">{{idiomaController::traerTexto('donacion',$idioma);}}</h2>
-              <div class="bread-crumbs"><a href="index.html">{{idiomaController::traerTexto('inicio',$idioma);}}<span class="breadcrumb-sep">//</span></a><span class="active">{{idiomaController::traerTexto('donacion',$idioma);}}</span></div>
+              <h2 class="title text-white">{!!idiomaController::traerTexto('donacion',$idioma);!!}</h2>
+              <div class="bread-crumbs"><a href="index.html">{!!idiomaController::traerTexto('inicio',$idioma);!!}<span class="breadcrumb-sep">//</span></a><span class="active">{!!idiomaController::traerTexto('donacion',$idioma);!!}</span></div>
             </div>
           </div>
         </div>
@@ -98,7 +101,7 @@
               <div class="content">
                 <ul class="donate-info">
                   <li class="info-item">
-                    <span class="info-title">{{idiomaController::traerTexto('monto',$idioma);}}</span>
+                    <span class="info-title">{!!idiomaController::traerTexto('monto',$idioma);!!}</span>
                     <span class="amount">${{$donacion->monto}}</span>
                   </li>
                   
@@ -111,7 +114,7 @@
                   <h5><a href="causes.html"><span class="icon-img"><img src="{{asset('assets/images/icons/admin1.png')}}" alt="Icon"></span>{{$donacion->nombre}}</a></h5>
                 </div><br>
                 <div>
-                <a class="btn-theme btn-border-gradient gray-border btn-size-md" href="#"><span>{{idiomaController::traerTexto('donaYa',$idioma);}}<img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right-gradient.png')}}" alt="Icon"></span></a>
+                <a class="btn-theme btn-border-gradient gray-border btn-size-md" href="{{route('contact')}}"><span>{!!idiomaController::traerTexto('donaYa',$idioma);!!}<img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right-gradient.png')}}" alt="Icon"></span></a>
                 </div>
                 
               </div>

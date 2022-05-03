@@ -84,6 +84,37 @@ class idiomaController extends Controller
         }   
     }
 
+    
+    public function edit($id){
+
+        
+        if(Auth::user()){ 
+
+            if(Auth::user()->rol_id == 1){
+
+                
+
+                $obj_idioma = idioma::find($id);
+
+               
+                return view('idioma.editar',['fila'=>$obj_idioma]);
+                
+
+            }else{
+
+                return view('index');
+
+            }
+            
+
+        }else {
+
+            return redirect(route('login.index'));
+            
+        }   
+    }
+
+
     public function save(Request $request){
 
         
@@ -104,7 +135,7 @@ class idiomaController extends Controller
                 
                     
                     
-                return redirect()->back()->withErrors(['success' => "Se a Guardado el archivo correctamente"]);
+                return redirect(route('idioma.index'))->withErrors(['success' => "Se a Guardado el archivo correctamente"]);
 
                     
                 

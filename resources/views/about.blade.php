@@ -17,7 +17,7 @@
       $galeria = imagenesController::traerGaleria('galeria_1',6);
     
     ?>
-    <title>{{idiomaController::traerTexto('nosotros',$idioma);}}  | Organización Sin Fronteras </title>
+    <title>{!!idiomaController::traerTexto('nosotros',$idioma);!!}  | Organización Sin Fronteras </title>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="{{asset('assets/images/Logol2.png')}}" type="image/x-icon" />
@@ -78,8 +78,8 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="page-title-content text-center">
-              <h2 class="title text-white">{{idiomaController::traerTexto('nosotros',$idioma);}}</h2>
-              <div class="bread-crumbs"><a href="{{route('index')}}">{{idiomaController::traerTexto('inicio',$idioma);}}<span class="breadcrumb-sep">//</span></a><span class="active">{{idiomaController::traerTexto('nosotros',$idioma);}}</span></div>
+              <h2 class="title text-white">{!!idiomaController::traerTexto('nosotros',$idioma);!!}</h2>
+              <div class="bread-crumbs"><a href="{{route('index')}}">{!!idiomaController::traerTexto('inicio',$idioma);!!}<span class="breadcrumb-sep">//</span></a><span class="active">{!!idiomaController::traerTexto('nosotros',$idioma);!!}</span></div>
             </div>
           </div>
         </div>
@@ -93,8 +93,8 @@
         <div class="row">
           <div class="col-lg-9">
             <div class="section-title">
-              <h5 class="subtitle line-theme-color">{{idiomaController::traerTexto('nosotros',$idioma);}}.</h5>
-              <h2 class="title">{{idiomaController::traerTexto('subtitulo_1',$idioma);}}</h2><br>
+              <h5 class="subtitle line-theme-color">{!!idiomaController::traerTexto('nosotros',$idioma);!!}.</h5>
+              <h2 class="title">{!!idiomaController::traerTexto('subtitulo_1',$idioma);!!}</h2><br>
             </div>
           </div>
         </div>
@@ -106,25 +106,25 @@
           </div>
           <div class="col-lg-8">
             <div class="about-content">
-              <p class="text-style">{{idiomaController::traerTexto('sinfrontera_1',$idioma);}} {{\Carbon\Carbon::parse('2019-03-01')->age}} {{idiomaController::traerTexto('sinfrontera_2',$idioma);}}.</p>
-              <p class="mb-0"> {{idiomaController::traerTexto('sinfrontera_3',$idioma);}}</p><br><br>
+              <p class="text-style">{!!idiomaController::traerTexto('sinfrontera_1',$idioma);!!} {{\Carbon\Carbon::parse('2019-03-01')->age}} {!!idiomaController::traerTexto('sinfrontera_2',$idioma);!!}.</p>
+              <p class="mb-0"> {!!idiomaController::traerTexto('sinfrontera_3',$idioma);!!}</p><br><br>
             </div>
             <div class="content-box-wrp">
               <div class="row">
                 <div class="col-lg-6">
                   <div class="content-box-item mb-md-30">
-                    <h3 class="title">{{idiomaController::traerTexto('mision',$idioma);}}</h3>
+                    <h3 class="title">{!!idiomaController::traerTexto('mision',$idioma);!!}</h3>
                     <img class="img-line-shape" src="{{asset('assets/images/shape/line-s1.png')}}" alt="Image-Givest">
-                    <p>{{idiomaController::traerTexto('texto_mision',$idioma);}}</p>
+                    <p>{!!idiomaController::traerTexto('texto_mision',$idioma);!!}</p>
                     
                     <img class="bg-line-shape" src="{{asset('assets/images/shape/line5.png')}}" alt="Image-Givest">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="content-box-item" data-bg-color="#00a0c9">
-                    <h3 class="title">{{idiomaController::traerTexto('vision',$idioma);}}</h3>
+                    <h3 class="title">{!!idiomaController::traerTexto('vision',$idioma);!!}</h3>
                     <img class="img-line-shape" src="{{asset('assets/images/shape/line-s1.png')}}" alt="Image-Givest">
-                    <p>{{idiomaController::traerTexto('texto_vision',$idioma);}}</p>
+                    <p>{!!idiomaController::traerTexto('texto_vision',$idioma);!!}</p>
                     
                     <img class="bg-line-shape" src="{{asset('assets/images/shape/line5.png')}}" alt="Image-Givest">
                   </div>
@@ -144,9 +144,9 @@
           <div class="col-lg-6 offset-lg-3 col-xl-4 offset-xl-0">
             <div class="section-title">
               
-              <h2 class="title title-style">{{idiomaController::traerTexto('equipo_de_trabajo',$idioma);}}<img class="img-shape" src="{{asset('assets/images/shape/3.png')}}" alt="Image-Givest"></h2>
+              <h2 class="title title-style">{!!idiomaController::traerTexto('equipo_de_trabajo',$idioma);!!}<img class="img-shape" src="{{asset('assets/images/shape/3.png')}}" alt="Image-Givest"></h2>
               <div class="desc">
-                <p>{{idiomaController::traerTexto('equipo_texto',$idioma);}}</p>
+                <p>{!!idiomaController::traerTexto('equipo_texto',$idioma);!!}</p>
                 <!-- <a href="volunteer.html" class="btn-theme btn-gradient btn-slide">Join Now <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right2.png')}}" alt="Icon"></a> -->
               </div>
             </div>

@@ -157,6 +157,7 @@ Route::get('/idiomas', [idiomaController::class, 'index'])->name('idioma.index')
 Route::post('/texto/insert', [idiomaController::class, 'insert'])->name('texto.insert');
 Route::post('/texto/save', [idiomaController::class, 'save'])->name('texto.save');
 Route::get('/texto/delete/{id}', [idiomaController::class, 'delete'])->name('texto.delete');
+Route::get('/texto/editar/{id}', [idiomaController::class, 'edit'])->name('texto.editar');
 
 
 Route::get('/actividades', [blogController::class, 'index'])->name('blog.index');

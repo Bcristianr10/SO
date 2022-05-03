@@ -13,10 +13,14 @@
       }else{
         $idioma = 'ESP';
       }
+
+      use App\Http\Controllers\imagenesController; 
+        
+      $banner = imagenesController::traerImagen('banner_emprendimiento');
       
     
     ?>
-    <title>{{idiomaController::traerTexto('emprendimiento',$idioma);}} | Organización Sin Fronteras</title>
+    <title>{!!idiomaController::traerTexto('emprendimiento',$idioma);!!} | Organización Sin Fronteras</title>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="{{asset('assets/images/Logol2.png')}}" type="image/x-icon" />
@@ -70,13 +74,13 @@
 
   <main class="main-content site-wrapper-reveal">
     <!--== Start Page Title Area ==-->
-    <section class="page-title-area"data-bg-img="{{asset('assets/images/photos/bg-page-title.jpg')}}">
+    <section class="page-title-area"data-bg-img="@if(isset($banner)){{$banner->ruta}}@else{{asset('assets/images/photos/bg-page-title.jpg')}}@endif">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <div class="page-title-content text-center">
-              <h2 class="title text-white">{{idiomaController::traerTexto('emprendimiento',$idioma);}}</h2>
-              <div class="bread-crumbs"><a href="index.html">{{idiomaController::traerTexto('inicio',$idioma);}}<span class="breadcrumb-sep">//</span></a><span class="active">{{idiomaController::traerTexto('emprendimiento',$idioma);}}</span></div>
+              <h2 class="title text-white">{!!idiomaController::traerTexto('emprendimiento',$idioma);!!}</h2>
+              <div class="bread-crumbs"><a href="index.html">{!!idiomaController::traerTexto('inicio',$idioma);!!}<span class="breadcrumb-sep">//</span></a><span class="active">{!!idiomaController::traerTexto('emprendimiento',$idioma);!!}</span></div>
             </div>
           </div>
         </div>

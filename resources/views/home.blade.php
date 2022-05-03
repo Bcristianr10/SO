@@ -19,7 +19,7 @@
     
     ?>
 
-    <title>{{idiomaController::traerTexto('inicio',$idioma);}} | Organización Sin Fronteras</title>
+    <title>{!!idiomaController::traerTexto('inicio',$idioma);!!} | Organización Sin Fronteras</title>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="{{asset('assets/images/Logol2.png')}}" type="image/x-icon" />
@@ -84,14 +84,14 @@
                   <div class="content" data-aos="fade-right" data-aos-duration="1000">
                     <div class="subtitle-content">
                       <img src="{{asset('assets/images/icons/1.png')}}" alt="Givest-HasTech">
-                      <h6>"{{idiomaController::traerTexto('titulo_2',$idioma);}}"</h6><br><h6>"{{idiomaController::traerTexto('titulo_3',$idioma);}}"</h6>
+                      <h6>"{!!idiomaController::traerTexto('titulo_2',$idioma);!!}"</h6><br><h6>"{!!idiomaController::traerTexto('titulo_3',$idioma);!!}"</h6>
                     </div>
                     <div class="tittle-wrp">
-                      <h2>{{idiomaController::traerTexto('titulo_1',$idioma);}}</h2>
+                      <h2>{!!idiomaController::traerTexto('titulo_1',$idioma);!!}</h2>
                     </div>
                     <div class="btn-wrp">
-                      <a href="{{route('form')}}" class="btn-theme btn-gradient btn-slide btn-style">{{idiomaController::traerTexto('formulario_adulto',$idioma);}}</a>
-                      <a href="{{route('formhijo')}}" class="btn-theme btn-gradient btn-slide btn-style">{{idiomaController::traerTexto('formulario_nino',$idioma);}}</a>
+                      <a href="{{route('form')}}" class="btn-theme btn-gradient btn-slide btn-style">{!!idiomaController::traerTexto('formulario_adulto',$idioma);!!}</a>
+                      <a href="{{route('formhijo')}}" class="btn-theme btn-gradient btn-slide btn-style">{!!idiomaController::traerTexto('formulario_nino',$idioma);!!}</a>
                     </div>
                   </div>
                 </div>
@@ -127,9 +127,9 @@
                     <div class="donate-circle-wrp">
                       <div class="pie-chart-circle" data-size="255" data-line-width="8" data-line-cap="butt" data-track-color="#ffffff54" data-bar-color="#fff" data-percent="68"></div>
                       <div class="donate-content">
-                        <div class="raised-amount">{{idiomaController::traerTexto('apoyar',$idioma);}}</div>
+                        <div class="raised-amount">{!!idiomaController::traerTexto('apoyar',$idioma);!!}</div>
                         <img class="line-shape-img" src="{{asset('assets/images/shape/line-s2.png')}}" alt="Image-Givest">
-                        <h5 class="donate-title">{{idiomaController::traerTexto('subtitulo_2',$idioma);}} </h5>
+                        <h5 class="donate-title">{!!idiomaController::traerTexto('subtitulo_2',$idioma);!!} </h5>
                       </div>
                     </div>
                   </div>
@@ -168,13 +168,13 @@
                   <!-- <div class="icon-box">
                     <img class="icon-img" src="{{asset('assets/images/icons/s1.png')}}" alt="Icon">
                   </div> -->
-                  <h2 class="text-white" style="font-weight: bold;">{{idiomaController::traerTexto('programa_de_salud',$idioma);}}</h2>
+                  <h2 class="text-white" style="font-weight: bold;">{!!idiomaController::traerTexto('programa_de_salud',$idioma);!!}</h2>
                 </div>
                 <div class="content">
                   <div class="separator-line">
                     <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
                   </div>
-                  <p class="text-center">{{idiomaController::traerTexto('texto_programa_de_salud',$idioma);}} </p>
+                  <p class="text-center">{!!idiomaController::traerTexto('texto_programa_de_salud',$idioma);!!} </p>
                   
                 </div>
               </div>
@@ -187,13 +187,13 @@
                   <!-- <div class="icon-box">
                     <img class="icon-img" src="{{asset('assets/images/icons/s2.png')}}" alt="Icon">
                   </div> -->
-                  <h2 class="text-white" style="font-weight: bold;">{{idiomaController::traerTexto('programa_deportivo',$idioma);}}</h2>
+                  <h2 class="text-white" style="font-weight: bold;">{!!idiomaController::traerTexto('programa_deportivo',$idioma);!!}</h2>
                 </div>
                 <div class="content">
                   <div class="separator-line">
                     <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
                   </div>
-                  <p class="text-center">{{idiomaController::traerTexto('texto_deporte',$idioma);}}</p>
+                  <p class="text-center">{!!idiomaController::traerTexto('texto_deporte',$idioma);!!}</p>
                   <!-- <a href="causes-details.html" class="btn-theme btn-white btn-border btn-size-md">View Details <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right.png')}}" alt="Icon"></a> -->
                 </div>
               </div>
@@ -206,13 +206,13 @@
                   <!-- <div class="icon-box">
                     <img class="icon-img" src="{{asset('assets/images/icons/s2.png')}}" alt="Icon">
                   </div> -->
-                  <h2 class="text-white" style="font-weight: bold;">{{idiomaController::traerTexto('programa_social',$idioma);}}</h2>
+                  <h2 class="text-white" style="font-weight: bold;">{!!idiomaController::traerTexto('programa_social',$idioma);!!}</h2>
                 </div>
                 <div class="content">
                   <div class="separator-line">
                     <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
                   </div>
-                  <p>{{idiomaController::traerTexto('texto_social',$idioma);}}</p>
+                  <p>{!!idiomaController::traerTexto('texto_social',$idioma);!!}</p>
                   <!-- <a href="causes-details.html" class="btn-theme btn-white btn-border btn-size-md">View Details <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right.png')}}" alt="Icon"></a> -->
                 </div>
               </div>
@@ -225,13 +225,13 @@
                   <!-- <div class="icon-box">
                     <img class="icon-img" src="{{asset('assets/images/icons/s3.png')}}" alt="Icon">
                   </div> -->
-                  <h2 class="text-white" style="font-weight: bold;">{{idiomaController::traerTexto('programa_educacion',$idioma);}}</h2>
+                  <h2 class="text-white" style="font-weight: bold;">{!!idiomaController::traerTexto('programa_educacion',$idioma);!!}</h2>
                 </div>
                 <div class="content">
                   <div class="separator-line">
                     <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
                   </div>
-                  <p>{{idiomaController::traerTexto('texto_educacion',$idioma);}}</p>
+                  <p>{!!idiomaController::traerTexto('texto_educacion',$idioma);!!}</p>
                   <!-- <a href="causes-details.html" class="btn-theme btn-white btn-border btn-size-md">View Details <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right.png')}}" alt="Icon"></a> -->
                 </div>
               </div>
@@ -262,7 +262,7 @@
         <div class="row" data-aos="fade-up" data-aos-duration="1000">
           <div class="col-sm-8 offset-sm-2 col-md-8 offset-md-2 col-lg-4 offset-lg-0 col-xl-4">
             <div class="section-title text-center text-lg-start">
-              <h3 class="title title-style mt-xl-30">{{idiomaController::traerTexto('patrocinadores',$idioma);}} <img class="img-shape" src="{{asset('assets/images/shape/3.png')}}" alt="Image-Givest"></h3>
+              <h3 class="title title-style mt-xl-30">{!!idiomaController::traerTexto('patrocinadores',$idioma);!!} <img class="img-shape" src="{{asset('assets/images/shape/3.png')}}" alt="Image-Givest"></h3>
             </div>
           </div>
           <div class="col-lg-8 col-xl-7 offset-xl-1">

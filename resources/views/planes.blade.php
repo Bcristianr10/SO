@@ -18,7 +18,7 @@
         $banner = imagenesController::traerImagen('banner_1');
     
     ?>
-    <title>{{idiomaController::traerTexto('programas',$idioma);}} | Organización Sin Fronteras</title>
+    <title>{!!idiomaController::traerTexto('programas',$idioma);!!} | Organización Sin Fronteras</title>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="{{asset('assets/images/Logol2.png')}}" type="image/x-icon" />
@@ -72,13 +72,13 @@
 
   <main class="main-content site-wrapper-reveal">
     <!--== Start Page Title Area ==-->
-    <section class="page-title-area" data-bg-img="{{$banner->ruta}}">
+    <section class="page-title-area" data-bg-img="@if(isset($banner->ruta)){{$banner->ruta}} @else {{asset('assets/images/photos/bg-page-title.jpg')}} @endif">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <div class="page-title-content text-center">
-              <h2 class="title text-white">{{idiomaController::traerTexto('programas',$idioma);}}</h2>
-              <div class="bread-crumbs"><a href="{{route('index')}}">{{idiomaController::traerTexto('inicio',$idioma);}}<span class="breadcrumb-sep">//</span></a><span class="active">{{idiomaController::traerTexto('programas',$idioma);}}</span></div>
+              <h2 class="title text-white">{!!idiomaController::traerTexto('programas',$idioma);!!}</h2>
+              <div class="bread-crumbs"><a href="{{route('index')}}">{!!idiomaController::traerTexto('inicio',$idioma);!!}<span class="breadcrumb-sep">//</span></a><span class="active">{!!idiomaController::traerTexto('programas',$idioma);!!}</span></div>
             </div>
           </div>
         </div>
@@ -103,27 +103,27 @@
                         </div>
                         <div class="content">
                             
-                            <h2 class="title">{{idiomaController::traerTexto($plan,$idioma);}}</h2>
+                            <h2 class="title">{!!idiomaController::traerTexto($plan,$idioma);!!}</h2>
 
                             
                            
                             <p>
 
                               @if ($plan == 'programa_de_salud')
-                                {{idiomaController::traerTexto('texto1_programa_de_salud',$idioma);}}
+                                {!!idiomaController::traerTexto('texto1_programa_de_salud',$idioma);!!}
 
                               @else
                                 @if ($plan == 'programa_educativo')
-                                  {{idiomaController::traerTexto('texto1_programa_educativo',$idioma);}}
+                                  {!!idiomaController::traerTexto('texto1_programa_educativo',$idioma);!!}
 
                                 @else
 
                                   @if ($plan == 'programa_social')
-                                    {{idiomaController::traerTexto('texto1_programa_social',$idioma);}}
+                                    {!!idiomaController::traerTexto('texto1_programa_social',$idioma);!!}
 
                                   @else
                                     @if ($plan == 'programa_deportivo')
-                                      {{idiomaController::traerTexto('texto1_programa_deportivo',$idioma);}}
+                                      {!!idiomaController::traerTexto('texto1_programa_deportivo',$idioma);!!}
 
                                       
                                     @endif
@@ -148,7 +148,7 @@
 
                               @else
                                 @if ($plan == 'programa_educativo')
-                                  @foreach (imagenesController::traerGaleria('galeria_programa_educativo',3) as $item)
+                                  @foreach (imagenesController::traerGaleria('galeria_programa_educación_y_cultura',3) as $item)
                                     <div class="col-sm-4">
                                         <img class="w-100 mb-xs-30" src="{{$item->ruta}}" alt="Image-Givest">
                                     </div>

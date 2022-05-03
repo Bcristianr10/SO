@@ -33,25 +33,25 @@
 
                 
                   <li @if (Request::is('/')) class="active"  @endif><a href="{{route('index')}}">{{$inicio}}</a></li>
-                  <li @if (Request::is('aboutUs')) class="active"  @endif><a href="{{route('about')}}">{{idiomaController::traerTexto('nosotros',$idioma);}}</a></li>
-                  <li @if (Request::is('contact')) class="active"  @endif><a href="{{route('contact')}}">{{idiomaController::traerTexto('contactanos',$idioma);}}</a></li>  
-                  <li @if (Request::is('actividades')) class="active"  @endif><a href="{{route('blog.index')}}">{{idiomaController::traerTexto('actividades',$idioma);}}</a></li>
+                  <li @if (Request::is('aboutUs')) class="active"  @endif><a href="{{route('about')}}">{!!idiomaController::traerTexto('nosotros',$idioma);!!}</a></li>
+                  <li @if (Request::is('contact')) class="active"  @endif><a href="{{route('contact')}}">{!!idiomaController::traerTexto('contactanos',$idioma);!!}</a></li>  
+                  <li @if (Request::is('actividades')) class="active"  @endif><a href="{{route('blog.index')}}">{!!idiomaController::traerTexto('actividades',$idioma);!!}</a></li>
 
                   
                   
-                  <li @if (Request::is('emprendimiento')) class="active has-submenu" @elseif (Request::is('donacion')) class="active has-submenu" @else class="has-submenu"@endif><a>{{idiomaController::traerTexto('mas',$idioma);}}</a>
+                  <li @if (Request::is('emprendimiento')) class="active has-submenu" @elseif (Request::is('donacion')) class="active has-submenu" @else class="has-submenu"@endif><a>{!!idiomaController::traerTexto('mas',$idioma);!!}</a>
                     <ul class="submenu-nav">
-                    <li ><a href="{{route('emprendimiento.index')}}">{{idiomaController::traerTexto('emprendimiento',$idioma);}}</a></li>
-                  <li ><a href="{{route('donacion.index')}}">{{idiomaController::traerTexto('donacion',$idioma);}}</a></li>
+                    <li ><a href="{{route('emprendimiento.index')}}">{!!idiomaController::traerTexto('emprendimiento',$idioma);!!}</a></li>
+                  <li ><a href="{{route('donacion.index')}}">{!!idiomaController::traerTexto('donacion',$idioma);!!}</a></li>
                       
                     </ul>
                   </li>
 
 
-                  <li class="has-submenu"><a>{{idiomaController::traerTexto('idioma',$idioma);}}</a>
+                  <li class="has-submenu"><a>{!!idiomaController::traerTexto('idioma',$idioma);!!}</a>
                     <ul class="submenu-nav">
-                      <li><a href="{{route('idioma.idioma',['id'=>'ESP'])}}">{{idiomaController::traerTexto('espanol',$idioma);}}</a></li>
-                      <li><a href="{{route('idioma.idioma',['id'=>'ENG'])}}">{{idiomaController::traerTexto('ingles',$idioma);}}</a></li>
+                      <li><a href="{{route('idioma.idioma',['id'=>'ESP'])}}">{!!idiomaController::traerTexto('espanol',$idioma);!!}</a></li>
+                      <li><a href="{{route('idioma.idioma',['id'=>'ENG'])}}">{!!idiomaController::traerTexto('ingles',$idioma);!!}</a></li>
                       
                     </ul>
                   </li>
@@ -61,7 +61,7 @@
             </div>
             <div class="header-action-area">
               <div class="buttoni">
-                <a href="{{route('inicio')}}" class="btn-theme btn-border btn-black btn-style">{{idiomaController::traerTexto('ingresar',$idioma);}} <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-right-line-dark.png')}}" alt="Icon"></a>
+                <a href="{{route('inicio')}}" class="btn-theme btn-border btn-black btn-style">{!!idiomaController::traerTexto('ingresar',$idioma);!!} <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-right-line-dark.png')}}" alt="Icon"></a>
               </div>
               
             </div>

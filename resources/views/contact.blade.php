@@ -14,9 +14,14 @@
         $idioma = 'ESP';
       }
       
+      use App\Http\Controllers\imagenesController; 
+      
+      
+      $banner = imagenesController::traerImagen('banner_contactenos');
+    
     
     ?>
-    <title>{{idiomaController::traerTexto('contactanos',$idioma);}} | Organización Sin Fronteras</title>
+    <title>{!!idiomaController::traerTexto('contactanos',$idioma);!!} | Organización Sin Fronteras</title>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="{{asset('assets/images/Logol2.png')}}" type="image/x-icon" />
@@ -70,13 +75,13 @@
 
   <main class="main-content site-wrapper-reveal">
     <!--== Start Page Title Area ==-->
-    <section class="page-title-area" data-bg-img="{{asset('assets/images/photos/bg-page-title.jpg')}}">
+    <section class="page-title-area" data-bg-img="@if(isset($banner)){{$banner->ruta}}@else{{asset('assets/images/photos/bg-page-title.jpg')}}@endif">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <div class="page-title-content text-center">
-              <h2 class="title text-white">{{idiomaController::traerTexto('contactanos',$idioma);}}</h2>
-              <div class="bread-crumbs"><a href="{{route('index')}}">{{idiomaController::traerTexto('inicio',$idioma);}}<span class="breadcrumb-sep">//</span></a><span class="active">{{idiomaController::traerTexto('contactanos',$idioma);}}</span></div>
+              <h2 class="title text-white">{!!idiomaController::traerTexto('contactanos',$idioma);!!}</h2>
+              <div class="bread-crumbs"><a href="{{route('index')}}">{!!idiomaController::traerTexto('inicio',$idioma);!!}<span class="breadcrumb-sep">//</span></a><span class="active">{!!idiomaController::traerTexto('contactanos',$idioma);!!}</span></div>
             </div>
           </div>
         </div>
@@ -96,9 +101,9 @@
                   <div class="row">
                     <div class="col-lg-12">
                       <div class="section-title">
-                        <h5 class="subtitle line-theme-color">{{idiomaController::traerTexto('contactanos',$idioma);}}</h5>
-                        <h2 class="title">{{idiomaController::traerTexto('tus_datos',$idioma);}}</h2>
-                        <p>{{idiomaController::traerTexto('datos_texto',$idioma);}}</p>
+                        <h5 class="subtitle line-theme-color">{!!idiomaController::traerTexto('contactanos',$idioma);!!}</h5>
+                        <h2 class="title">{!!idiomaController::traerTexto('tus_datos',$idioma);!!}</h2>
+                        <p>{!!idiomaController::traerTexto('datos_texto',$idioma);!!}</p>
                       </div>
                     </div>
                   </div>
@@ -107,29 +112,29 @@
                       <div class="row row-gutter-20">
                         <div class="col-md-12">
                           <div class="form-group">
-                            <input class="form-control" type="text" name="txtNombre" id="txtNombre" placeholder="{{idiomaController::traerTexto('nombre',$idioma);}}" required>
+                            <input class="form-control" type="text" name="txtNombre" id="txtNombre" placeholder="{!!idiomaController::traerTexto('nombre',$idioma);!!}" required>
                           </div>
                           
                         </div>
                         <div class="col-md-12">
                           <div class="form-group">
-                            <input class="form-control" type="email" name="txtEmail" placeholder="{{idiomaController::traerTexto('correo_electronico',$idioma);}}" required>
+                            <input class="form-control" type="email" name="txtEmail" placeholder="{!!idiomaController::traerTexto('correo_electronico',$idioma);!!}" required>
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group">
-                            <input class="form-control" type="text" name="txtTelefono" placeholder="{{idiomaController::traerTexto('telefono',$idioma);}}" required >
+                            <input class="form-control" type="text" name="txtTelefono" placeholder="{!!idiomaController::traerTexto('telefono',$idioma);!!}" required >
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group mb-0">
-                            <textarea class="form-control textarea" name="txtMensaje" placeholder="{{idiomaController::traerTexto('mensaje',$idioma);}}" required ></textarea>
+                            <textarea class="form-control textarea" name="txtMensaje" placeholder="{!!idiomaController::traerTexto('mensaje',$idioma);!!}" required ></textarea>
                           </div>
                         </div>
                        
                         <div class="col-md-12">
                           <div class="form-group mb-0">
-                            <button class="btn-theme btn-gradient btn-slide no-border"  id="btnEnviar" type="submit">{{idiomaController::traerTexto('enviar',$idioma);}}</button>
+                            <button class="btn-theme btn-gradient btn-slide no-border"  id="btnEnviar" type="submit">{!!idiomaController::traerTexto('enviar',$idioma);!!}</button>
                           </div>
                         </div>
                       </div>
@@ -146,7 +151,7 @@
                       <img class="icon-img" src="{{asset('assets/images/icons/c1.png')}}" alt="Icon">
                     </div>
                     <div class="content">
-                      <h4>{{idiomaController::traerTexto('telefono',$idioma);}}</h4>
+                      <h4>{!!idiomaController::traerTexto('telefono',$idioma);!!}</h4>
                       <img class="line-icon" src="{{asset('assets/images/shape/line-s1.png')}}" alt="Image-Givest">
                       <a href="tel://+50761359059">+(507) 6135-9059</a>                      
                     </div>
@@ -156,9 +161,19 @@
                       <img class="icon-img" src="{{asset('assets/images/icons/c2.png')}}" alt="Icon">
                     </div>
                     <div class="content">
-                      <h4>{{idiomaController::traerTexto('correo',$idioma);}}</h4>
+                      <h4>{!!idiomaController::traerTexto('correo',$idioma);!!}</h4>
                       <img class="line-icon" src="{{asset('assets/images/shape/line-s1.png')}}" alt="Image-Givest">
                       <a href="mailto://atención.sinfronteras@hotmail.com">atención.sinfronteras@hotmail.com</a>                      
+                    </div>
+                  </div>
+                  <div class="contact-info-item">
+                    <div class="icon">
+                      <img class="icon-img" src="{{asset('assets/images/icons/c4.png')}}" alt="Icon">
+                    </div>
+                    <div class="content">
+                      <h4>{!!idiomaController::traerTexto('instagram',$idioma);!!}</h4>
+                      <img class="line-icon" src="{{asset('assets/images/shape/line-s1.png')}}" alt="Image-Givest">
+                      <a href="https://www.instagram.com/orgsinfronteras">@orgsinfronteras</a>                      
                     </div>
                   </div>
                   <div class="contact-info-item mb-0 pb-0">
@@ -166,11 +181,15 @@
                       <img class="icon-img" src="{{asset('assets/images/icons/c3.png')}}" alt="Icon">
                     </div>
                     <div class="content">
-                      <h4>{{idiomaController::traerTexto('direccion',$idioma);}}</h4>
+                      <h4>{!!idiomaController::traerTexto('direccion',$idioma);!!}</h4>
                       <img class="line-icon" src="{{asset('assets/images/shape/line-s1.png')}}" alt="Image-Givest">
                       <p>La Chorrera, <br> Panamá Oeste.</p>
                     </div>
                   </div>
+
+
+
+                  
                 </div>
                 
               </div>

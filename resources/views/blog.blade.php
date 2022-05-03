@@ -18,7 +18,7 @@
         $banner = imagenesController::traerImagen('banner_1');
     
     ?>
-    <title>{{idiomaController::traerTexto('actividades',$idioma);}} | Organización Sin Fronteras</title>
+    <title>{!!idiomaController::traerTexto('actividades',$idioma);!!} | Organización Sin Fronteras</title>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="{{asset('assets/images/Logol2.png')}}" type="image/x-icon" />
@@ -72,13 +72,13 @@
 
   <main class="main-content site-wrapper-reveal">
     <!--== Start Page Title Area ==-->
-    <section class="page-title-area" data-bg-img="{{$banner->ruta}}">
+    <section class="page-title-area" data-bg-img="@if(isset($banner)){{$banner->ruta}}@else{{asset('assets/images/photos/bg-page-title.jpg')}}@endif">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <div class="page-title-content text-center">
-              <h2 class="title text-white">{{idiomaController::traerTexto('actividades',$idioma);}}</h2>
-              <div class="bread-crumbs"><a href="{{route('index')}}">{{idiomaController::traerTexto('inicio',$idioma);}}<span class="breadcrumb-sep">//</span></a><span class="active">{{idiomaController::traerTexto('actividades',$idioma);}}</span></div>
+              <h2 class="title text-white">{!!idiomaController::traerTexto('actividades',$idioma);!!}</h2>
+              <div class="bread-crumbs"><a href="{{route('index')}}">{!!idiomaController::traerTexto('inicio',$idioma);!!}<span class="breadcrumb-sep">//</span></a><span class="active">{!!idiomaController::traerTexto('actividades',$idioma);!!}</span></div>
             </div>
           </div>
         </div>
@@ -99,21 +99,21 @@
                         <div class="thumb">
                             <a href="{{route('blog.detalle',['id'=>$fila->id])}}"><img src="{{$fila->principal()->ruta}}" alt="Givest-Blog"></a>
                             <div class="meta-date">
-                            <a href="blog.html"><span>{{Carbon\Carbon::parse($fila->fecha)->format('d')}}</span> {{idiomaController::traerTexto(Carbon\Carbon::parse($fila->fecha)->format('M'),$idioma);}}</a>
+                            <a href="blog.html"><span>{{Carbon\Carbon::parse($fila->fecha)->format('d')}}</span> {!!idiomaController::traerTexto(Carbon\Carbon::parse($fila->fecha)->format('M'),$idioma);!!}</a>
                             </div>
                             <div class="shape-line"></div>
                         </div>
                         <div class="content">
                             <div class="inner-content">
                             <div class="meta">
-                                <a class="post-category" href="blog.html">{{idiomaController::traerTexto($fila->programa,$idioma);}}</a>
-                                <a class="post-author" href="blog.html"><span class="icon"><img class="icon-img" src="assets/images/icons/admin1.png" alt="Icon-Image"></span>By: {{$fila->escritor}}</a>
+                                <a class="post-category" href="blog.html">{!!idiomaController::traerTexto($fila->programa,$idioma);!!}</a>
+                                <a class="post-author" href="blog.html"><span class="icon"><img class="icon-img" src="{{asset('assets/images/icons/admin1.png')}}" alt="Icon-Image"></span>By: {{$fila->escritor}}</a>
                             </div>
                             <h4 class="title">
                                 <a href="{{route('blog.detalle',['id'=>$fila->id])}}">{{$fila->titulo_1}}</a>
                             </h4>
                             <p>{{$fila->resena}}</p>
-                            <a href="{{route('blog.detalle',['id'=>$fila->id])}}" class="btn-theme btn-border-gradient btn-size-md"><span>{{idiomaController::traerTexto('leer_mas',$idioma);}} <img class="icon icon-img" src="assets/images/icons/arrow-line-right-gradient.png" alt="Icon"></span></a>
+                            <a href="{{route('blog.detalle',['id'=>$fila->id])}}" class="btn-theme btn-border-gradient btn-size-md"><span>{!!idiomaController::traerTexto('leer_mas',$idioma);!!} <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right-gradient.png')}}" alt="Icon"></span></a>
                             </div>
                         </div>
                     </div>

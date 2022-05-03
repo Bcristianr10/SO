@@ -55,7 +55,7 @@
                                 @foreach ($resultado as $fila)
                                     <tr>                                        
                                         <td>{{$fila->nombre}}</td>
-                                        <td>{{$fila->texto}}</td>                                       
+                                        <td>{!!$fila->texto!!}</td>                                       
                                         <td>
                                             
                                             @if($fila->idioma == 'ESP') 
@@ -66,15 +66,11 @@
                                             
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-primary btn-sm"  
-                                                            data-toggle="modal" data-animation="bounce"
-                                                            data-target=".editarTextoModal{{$fila->id}}">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            @include('modals.editarTexto') 
                                             
-                                           
                                             
+                                           <a class="btn btn-primary btn-sm" href="{{route('texto.editar',['id'=>$fila->id])}}">
+                                            <i class="fa fa-edit"></i>
+                                            </a>
 
                                             <a class="btn btn-danger btn-sm" href="{{route('texto.delete',['id'=>$fila->id])}}">
                                 
@@ -107,5 +103,10 @@
 
     <!-- Datatable init js -->
     <script src="{{ URL::asset('/js/pages/datatables.init.js')}}"></script>
+
+    <script src="{{ URL::asset('/libs/tinymce/tinymce.min.js')}}"></script>
+
+<!-- init js -->
+    <script src="{{ URL::asset('/js/pages/form-editor.init.js')}}"></script>
 
 @endsection
