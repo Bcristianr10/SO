@@ -63,6 +63,25 @@
                                 
                             </div>
 
+                            <div class="mb-3 col-md-12 ">
+                                <label >Primer Texto</label>
+                                <div class="col-lg-12" >
+                                    <textarea class="form-control" id="elm1" rows="5" name="textoUno"></textarea>
+                                    
+                                </div>
+                                    
+                                
+                            </div>
+
+                            <div class="mb-3 col-md-12 ">
+                                <label for="example-password-input1" class="form-label">Comentario</label>
+                                <div class="">
+                                    <textarea class="form-control" name="comentario" id=""
+                                     rows="7" required>
+                                    </textarea>                                                                                                           
+                                </div>
+                            </div>
+
                           
 
                             <div class="mb-3 col-md-12 ">
@@ -81,7 +100,7 @@
                                     <input class="form-control" list="datalistOptions" id="exampleDataList"
                                     placeholder="Seleccione un Plan" name="txtPrograma" required>
                                     <datalist id="datalistOptions">
-                                        <option value="Progama de Salud"></option>
+                                        <option value="Programa de Salud"></option>
                                         <option value="Programa Deportivo"></option>
                                         <option value="Programa Educacion y Cultura"></option>
                                         <option value="Programa Social"></option>

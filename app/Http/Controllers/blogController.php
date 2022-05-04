@@ -35,8 +35,19 @@ class blogController extends Controller
         return view('blog.index',['resultado'=>$resultado]);
     }
 
-    public function create(){  
-        return view('blog.create');
+    public function create(){        
+        
+        return view('blog.createx');
+    }
+
+    public function create2($id){
+        
+        return view('blog.create2',['id'=>$id]);
+    }
+
+    public function create3($id){
+        
+        return view('blog.create3',['id'=>$id]);
     }
 
     public function insert(Request $request){
@@ -45,68 +56,59 @@ class blogController extends Controller
 
             if(Auth::user()->rol_id == 1){
 
-                // $file2 = $request->file('imagenes');
-                // $file = $request->file('archivo'); 
-                // return $file2[0];
+                
 
                 $file = $request->file('archivo');                
                 if($file != null){
 
+                    $obj_blog = new blog();
+                    $obj_blog->titulo_1 = $request->txtTitulo1;     
+                    $obj_blog->resena = $request->txtResena;          
+                    $obj_blog->comentario = $request->comentario;  
+                    $obj_blog->texto_1 = $request->textoUno;                               
+                              
+                    $obj_blog->escritor = $request->escritor;          
+                    $obj_blog->programa = str_replace(" ", "_", $request->txtPrograma);
+                    $obj_blog->fecha = $request->txtFecha; 
+
+                    $obj_blog->save(); 
+
+                    $id = $obj_blog->id;
+
                     $file_name = now()->toArray()['day'].'_'.now()->toArray()['month'].'_'.mt_rand(1000,10000);
                     $extencion= $file->getClientOriginalExtension();
                     $file_name = $file_name.'.'.$extencion;
-                    $path = $file->storeAs('public/imagen/blog/'.now()->toArray()['year'].'/'.now()->toArray()['month'],$file_name,'s3');                                                        
-                    
-                    $obj_blog = new blog();
-                    $obj_blog->titulo_1 = $request->txtTitulo1;          
-                    $obj_blog->titulo_2 = $request->txtTitulo2;          
-                    $obj_blog->titulo_3 = $request->txtTitulo3;          
-                    $obj_blog->resena = $request->resena;          
-                    $obj_blog->comentario = $request->comentario;  
-                    $obj_blog->texto_1 = $request->textoUno;  
-                    $obj_blog->texto_2 = $request->textoDos;          
-                    $obj_blog->texto_3 = $request->textoTres;          
-                    $obj_blog->escritor = $request->escritor;          
-                    $obj_blog->programa = $request->programa; 
-                    $obj_blog->fecha = date('Y-m-d'); 
-
-                    $obj_blog->save();                    
-                    $id = $obj_blog->id;
+                    $path = $file->storeAs('public/imagen/blog/'.now()->toArray()['year'].'/'.now()->toArray()['month'],$file_name,'s3');     
 
                     $obj_fotoBlog = new fotoBlog();
                     $obj_fotoBlog->tipo = 1;
                     $obj_fotoBlog->ruta = env('AWS_URL').$path;
                     $obj_fotoBlog->blog_id = $id;
                     $obj_fotoBlog->save();
+
+                    return redirect(route('adminBlog.create2',['id'=>$obj_blog->id]));
                     
-                    $file2 = $request->file('imagenes');
+                 
+                }else{
 
-                    foreach($_FILES['imagenes']['name'] as $key => $value){
-                        if(file_exists($_FILES['imagenes']['tmp_name'][$key])){
-                            $file_name = now()->toArray()['day'].'_'.now()->toArray()['month'].'_'.mt_rand(1000,10000);
-                            $file_name = $file_name.''.$_FILES['imagenes']['name'][$key];
-                            
-                            $path = $file2[$key]->storeAs('public/imagen/blog/'.now()->toArray()['year'].'/'.now()->toArray()['month'],$file_name,'s3');                                                        
-                            
-                            $obj_fotoBlog = new fotoBlog();
-                            $obj_fotoBlog->tipo = 2;
-                            $obj_fotoBlog->ruta = env('AWS_URL').$path;
-                            $obj_fotoBlog->blog_id = $id;
-                            $obj_fotoBlog->save();
-                        }
-                    }
+                    return redirect()->back()->withErrors(['danger' => "Algo salio mal"]);
 
-
-
-                    
-                    
-                    return redirect(route('adminBlog.index'))->withErrors(['success' => "Se a Guardado el blog correctamente"]);
-
-                    
                 }
+               
+                    
+                //     
+
+
+
+                    
+                    
+                //     return redirect(route('adminBlog.index'))->withErrors(['success' => "Se a Guardado el blog correctamente"]);
+
+                    
+               
                 
 
-                return redirect()->back()->withErrors(['danger' => "Algo salio mal"]);
+                // 
 
             }else{
 
@@ -120,6 +122,98 @@ class blogController extends Controller
             return redirect(route('login.index'));
             
         }   
+
+    }
+
+    public function insert2(Request $request){
+
+        if(Auth::user()){ 
+
+            if(Auth::user()->rol_id == 1){
+
+               
+                
+                $files = $request->file('imagenes');                
+                if($files != null){
+                    
+                    $obj_blog = blog::find($request->txtId);
+                    $obj_blog->titulo_2 = $request->txtTitulo2;  
+                    $obj_blog->texto_2 = $request->textoDos;
+                    
+                    $obj_blog->save();  
+
+                    $id = $obj_blog->id;
+
+                   
+                    
+                    foreach($files as $key => $file){
+
+                        
+                        
+                        $file_name = now()->toArray()['day'].'_'.now()->toArray()['month'].'_'.mt_rand(1000,10000);
+                        $extencion= $file->getClientOriginalExtension();
+                        $file_name = $file_name.'.'.$extencion;
+                        $path = $file->storeAs('public/imagen/blog/'.now()->toArray()['year'].'/'.now()->toArray()['month'],$file_name,'s3');     
+
+                        $obj_fotoBlog = new fotoBlog();
+                        $obj_fotoBlog->tipo = 2;
+                        $obj_fotoBlog->ruta = env('AWS_URL').$path;
+                        $obj_fotoBlog->blog_id = $id;
+                        $obj_fotoBlog->save();
+                        
+                    }
+
+                    return redirect(route('adminBlog.create3',['id'=>$obj_blog->id]));
+
+                }else{
+
+                   
+
+                    return redirect()->back()->withErrors(['danger' => "Algo salio mal"]);
+
+                }
+
+                
+            }else{
+
+                return view('index');
+            }
+        }else {
+
+            return redirect(route('login.index'));
+            
+        }
+    }
+        
+    public function insert3(Request $request){
+
+        if(Auth::user()){ 
+
+            if(Auth::user()->rol_id == 1){
+                   
+                        
+                $obj_blog = blog::find($request->txtId);
+                $obj_blog->titulo_3 = $request->txtTitulo3;    
+                $obj_blog->texto_3 = $request->textoTres;
+
+                $obj_blog->save();
+                        
+    
+                return redirect(route('adminBlog.index'));
+    
+                    
+    
+                    
+            }else{
+
+                return view('index');
+            }
+        }else {
+
+            return redirect(route('login.index'));
+            
+        } 
+
 
     }
 
@@ -148,15 +242,74 @@ class blogController extends Controller
 
     }
 
+    public function update2($id){
+
+        if(Auth::user()){ 
+
+            if(Auth::user()->rol_id == 1){
+
+                $resultado = blog::find($id);              
+
+
+                
+                return view('blog.update2',['resultado'=>$resultado]);
+            }else{
+
+                return view('index');
+            }
+        }else {
+
+            return redirect(route('login.index'));
+            
+        } 
+
+    }
+    public function update3($id){
+
+        if(Auth::user()){ 
+
+            if(Auth::user()->rol_id == 1){
+
+                $resultado = blog::find($id);              
+
+
+                
+                return view('blog.update3',['resultado'=>$resultado]);
+            }else{
+
+                return view('index');
+            }
+        }else {
+
+            return redirect(route('login.index'));
+            
+        } 
+
+    }
+
     public function save(Request $request){
         
         if(Auth::user()){ 
 
             if(Auth::user()->rol_id == 1){
 
-                // $file2 = $request->file('imagenes');
-                // $file = $request->file('archivo'); 
-                // return $file2[0];
+                
+
+                
+
+                $obj_blog = blog::find($request->txtId);
+                $obj_blog->titulo_1 = $request->txtTitulo1;     
+                $obj_blog->resena = $request->txtResena;          
+                $obj_blog->comentario = $request->comentario;  
+                $obj_blog->texto_1 = $request->textoUno;                              
+                            
+                $obj_blog->escritor = $request->escritor; 
+                if(isset($request->txtPrograma)){
+                    $obj_blog->programa = str_replace(" ", "_", $request->txtPrograma);
+                } 
+                $obj_blog->fecha = $request->txtFecha; 
+
+                $obj_blog->save(); 
 
                 $file = $request->file('archivo');                
                 if($file != null){
@@ -166,86 +319,84 @@ class blogController extends Controller
                     $file_name = $file_name.'.'.$extencion;
                     $path = $file->storeAs('public/imagen/blog/'.now()->toArray()['year'].'/'.now()->toArray()['month'],$file_name,'s3');                                                        
                     
-                    $obj_blog = blog::find($request->txtId);
-                    $obj_blog->titulo_1 = $request->txtTitulo1;          
-                    $obj_blog->titulo_2 = $request->txtTitulo2;          
-                    $obj_blog->titulo_3 = $request->txtTitulo3;          
-                    $obj_blog->resena = $request->resena;          
-                    $obj_blog->comentario = $request->comentario;  
-                    $obj_blog->texto_1 = $request->textoUno;  
-                    $obj_blog->texto_2 = $request->textoDos;          
-                    $obj_blog->texto_3 = $request->textoTres;          
-                    $obj_blog->escritor = $request->escritor;          
-                    $obj_blog->programa = $request->programa; 
-                    $obj_blog->fecha = date('Y-m-d'); 
-
-                    $obj_blog->save();                    
-                    $id = $obj_blog->id;
-
                     $obj_fotoBlog = new fotoBlog();
                     $obj_fotoBlog->tipo = 1;
                     $obj_fotoBlog->ruta = env('AWS_URL').$path;
-                    $obj_fotoBlog->blog_id = $id;
+                    $obj_fotoBlog->blog_id = $obj_blog->id;
                     $obj_fotoBlog->save();
 
-                    $file2 = $request->file('imagenes');
-                    foreach($_FILES['imagenes']['name'] as $key => $value){
-                        if(file_exists($_FILES['imagenes']['tmp_name'][$key])){
-                            $file_name = now()->toArray()['day'].'_'.now()->toArray()['month'].'_'.mt_rand(1000,10000);
-                            $file_name = $file_name.''.$_FILES['imagenes']['name'][$key];
-                            
-                            $path = $file2[$key]->storeAs('public/imagen/blog/'.now()->toArray()['year'].'/'.now()->toArray()['month'],$file_name,'s3');                                                        
-                            
-                            $obj_fotoBlog = new fotoBlog();
-                            $obj_fotoBlog->tipo = 2;
-                            $obj_fotoBlog->ruta = env('AWS_URL').$path;
-                            $obj_fotoBlog->blog_id = $id;
-                            $obj_fotoBlog->save();
-                        }
-                    }
                     
-                    return redirect(route('adminBlog.index'))->withErrors(['success' => "Se a Actualizó el blog correctamente"]);
-
-                    
-                }else{
-
-                    $obj_blog = blog::find($request->txtId);
-                    $obj_blog->titulo_1 = $request->txtTitulo1;          
-                    $obj_blog->titulo_2 = $request->txtTitulo2;          
-                    $obj_blog->titulo_3 = $request->txtTitulo3;          
-                    $obj_blog->resena = $request->resena;          
-                    $obj_blog->comentario = $request->comentario;  
-                    $obj_blog->texto_1 = $request->textoUno;  
-                    $obj_blog->texto_2 = $request->textoDos;          
-                    $obj_blog->texto_3 = $request->textoTres;          
-                    $obj_blog->escritor = $request->escritor;          
-                    $obj_blog->programa = $request->programa; 
-                    $obj_blog->fecha = date('Y-m-d'); 
-
-                    $obj_blog->save();  
-
-                    $file2 = $request->file('imagenes');
-                    foreach($_FILES['imagenes']['name'] as $key => $value){
-                        if(file_exists($_FILES['imagenes']['tmp_name'][$key])){
-                            $file_name = now()->toArray()['day'].'_'.now()->toArray()['month'].'_'.mt_rand(1000,10000);
-                            $file_name = $file_name.''.$_FILES['imagenes']['name'][$key];
-                            
-                            $path = $file2[$key]->storeAs('public/imagen/blog/'.now()->toArray()['year'].'/'.now()->toArray()['month'],$file_name,'s3');                                                        
-                            
-                            $obj_fotoBlog = new fotoBlog();
-                            $obj_fotoBlog->tipo = 2;
-                            $obj_fotoBlog->ruta = env('AWS_URL').$path;
-                            $obj_fotoBlog->blog_id = $id;
-                            $obj_fotoBlog->save();
-                        }
-                    }
-
-                    return redirect(route('adminBlog.index'))->withErrors(['success' => "Se a Actualizó el blog correctamente"]);
                 }
 
                 
 
-                return redirect()->back()->withErrors(['danger' => "Algo salio mal"]);
+                return redirect(route('adminBlog.update2',['id'=>$obj_blog->id]));
+                
+
+                
+
+                
+
+            }else{
+
+                return view('index');
+
+            }
+            
+
+        }else {
+
+            return redirect(route('login.index'));
+            
+        }   
+
+    }
+
+    public function save2(Request $request){
+        
+        if(Auth::user()){ 
+
+            if(Auth::user()->rol_id == 1){
+
+                
+
+                $obj_blog = blog::find($request->txtId);
+                $obj_blog->titulo_2 = $request->txtTitulo2;  
+                $obj_blog->texto_2 = $request->textoDos;
+                
+                $obj_blog->save();  
+
+                $id = $obj_blog->id;
+
+               
+                $files = $request->file('imagenes');                
+                if($files != null){
+                    foreach($files as $key => $file){
+
+                        
+                        
+                        $file_name = now()->toArray()['day'].'_'.now()->toArray()['month'].'_'.mt_rand(1000,10000);
+                        $extencion= $file->getClientOriginalExtension();
+                        $file_name = $file_name.'.'.$extencion;
+                        $path = $file->storeAs('public/imagen/blog/'.now()->toArray()['year'].'/'.now()->toArray()['month'],$file_name,'s3');     
+
+                        $obj_fotoBlog = new fotoBlog();
+                        $obj_fotoBlog->tipo = 2;
+                        $obj_fotoBlog->ruta = env('AWS_URL').$path;
+                        $obj_fotoBlog->blog_id = $id;
+                        $obj_fotoBlog->save();
+                        
+                    }
+                }
+
+                
+
+                return redirect(route('adminBlog.update3',['id'=>$obj_blog->id]));
+                
+
+                
+
+               
 
             }else{
 

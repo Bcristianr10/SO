@@ -20,16 +20,17 @@
             <div class="card">
                 <div class="card-body">
                     
-                    <h1></h1>
+                    <div class="text-center">
+                        <h2>Editar Texto</h2>
+                        
+                    </div>
                     
                     <form action="{{route('texto.save')}}" method="POST" role="form" autocomplete="off">
                         @csrf
+                        
                         <div class="row">
                             
-                            <div class="text-center">
-                                <h2>Editar Texto</h2>
-                                
-                            </div>
+                            
                             
                             <div class="mb-3 col-md-4 ">
                                 <label for="example-password-input01" class="form-label">Idioma</label>

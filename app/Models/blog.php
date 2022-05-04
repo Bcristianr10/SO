@@ -22,7 +22,7 @@ class blog extends Model
 
     public function galeria()
     {
-        return $this->hasMany('App\Models\fotoBlog')->where('tipo',2)->paginate(3);
+        return $this->hasMany('App\Models\fotoBlog')->where('tipo',2)->get();
     }
 
 

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title') Actualizar Blog @endsection
+@section('title') Actualizar Actividad @endsection
 
 @section('css')
     <!-- Plugins css -->
@@ -10,7 +10,7 @@
 @section('content')
    
     @component('common-components.breadcrumb')
-         @slot('title') Blog  @endslot
+         @slot('title') Actividad  @endslot
          @slot('li_1') Actualizar @endslot
     @endcomponent
 
@@ -19,27 +19,23 @@
             <div class="card">
                 <div class="card-body">
                     <div class="text-center">
-                        <h2>Actualizar Blog</h2>
+                        <h2>Actualizar Actividad</h2>
                         
                     </div>
-                    <form action="{{route('adminBlog.save')}}"  method="POST" role="form" autocomplete="off"  enctype="multipart/form-data">
+                    <form action="{{route('adminBlog.save1')}}"  method="POST" role="form" autocomplete="off"  enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             
                            
-                            
-                            
                             <div class="mb-3 col-md-12 ">
-                                <label for="example-password-input1" class="form-label">Primer Titulo</label>
+                                <label for="example-password-input1" class="form-label">Titulo</label>
                                 <div class="">
                                     <input class="form-control" type="input" name="txtTitulo1" id="example-password-input1"
                                         placeholder="Titulo uno" value="{{$resultado->titulo_1}}" required>
                                 </div>
                             </div>
-
-                            
                             <div class=" mb-3 col-md-12">
-                            <label for="example-password-input1" class="form-label">Imagen principal</label>
+                                <label for="example-password-input1" class="form-label">Imagen Principal</label>
                                 <div class="dropzone">
                                     <div class="fallback">
                                         <input name="archivo" type="file" accept="image/*">
@@ -53,23 +49,28 @@
                                     </div>
                                 </div>
                             </div>
+                                                       
+
+                          
 
                             <div class="mb-3 col-md-12 ">
-                                <label for="example-password-input1" class="form-label">Reseña</label>
-                                <div class="">
-                                    <textarea class="form-control" name="resena" id=""
-                                     rows="7"  required>{{$resultado->resena}}
-                                    </textarea>                                                                                                           
+                                <label >Reseña</label>
+                                <div class="col-lg-12" >
+                                    <textarea class="form-control" rows="5" name="txtResena">{{$resultado->resena}}</textarea>
+                                    
                                 </div>
+                                    
+                                
                             </div>
 
                             <div class="mb-3 col-md-12 ">
-                                <label for="example-password-input1" class="form-label">Primer Texto</label>
-                                <div class="">
-                                    <textarea class="form-control" name="textoUno" id=""
-                                     rows="7" required>{{$resultado->texto_1}}
-                                    </textarea>                                                                                                           
+                                <label >Primer Texto</label>
+                                <div class="col-lg-12" >
+                                    <textarea class="form-control" id="elm1" rows="5" name="textoUno">{!!$resultado->texto_1!!}</textarea>
+                                    
                                 </div>
+                                    
+                                
                             </div>
 
                             <div class="mb-3 col-md-12 ">
@@ -81,57 +82,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3 col-md-12 ">
-                                <label for="example-password-input1" class="form-label">Segundo Titulo</label>
-                                <div class="">
-                                    <input class="form-control" type="input" name="txtTitulo2" id="example-password-input1"
-                                        placeholder="Titulo dos" value="{{$resultado->titulo_2}}" required>
-                                </div>
-                            </div>
-
-                            <div class="mb-3 col-md-12 ">
-                                <label for="example-password-input1" class="form-label">Segundo Texto</label>
-                                <div class="">
-                                    <textarea class="form-control" name="textoDos" id=""
-                                     rows="7" required>{{$resultado->texto_2}}
-                                    </textarea>                                                                                                           
-                                </div>
-                            </div>
-
-                            <div class=" mb-3 col-md-12">
-                            <label for="example-password-input1" class="form-label">Imagenes</label>
-                                <div class="dropzone">
-                                    <div class="fallback">
-                                        <input name="imagenes[]" type="file" accept="image/*" multiple>
-                                    </div>
-                                    <div class="dz-message needsclick">
-                                        <div class="mb-3">
-                                            <i class="display-4 text-muted fa fa-cloud-upload"></i>
-                                        </div>
-            
-                                        <h4>Arrastre el archivo o presione aquí.</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="mb-3 col-md-12 ">
-                                <label for="example-password-input1" class="form-label">Tercer Titulo</label>
-                                <div class="">
-                                    <input class="form-control" type="input" name="txtTitulo3" id="example-password-input1"
-                                        placeholder="Titulo tres" value="{{$resultado->titulo_3}}" required>
-                                </div>
-                            </div>
-
-                            <div class="mb-3 col-md-12 ">
-                                <label for="example-password-input1" class="form-label">Tercer Texto</label>
-                                <div class="">
-                                    <textarea class="form-control" name="textoTres" id=""
-                                     rows="7" required>{{$resultado->texto_3}}
-                                    </textarea>                                                                                                           
-                                </div>
-                            </div>
+                          
 
                             <div class="mb-3 col-md-12 ">
                                 <label for="example-password-input1" class="form-label">Escritor</label>
@@ -141,13 +92,32 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3 col-md-12 ">
-                                <label for="example-password-input1" class="form-label">Programa</label>
-                                <div class="">
-                                    <input class="form-control" type="input" name="programa" id="example-password-input1"
-                                        placeholder="Tipo de Programa" value="{{$resultado->programa}}" required>
+                           
+
+                            <div class="mb-3 col-md-6">
+                                <label class="col-md-6 col-form-label">Programa</label>
+                                <div class="col-md-12">
+                                    <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                    placeholder="Seleccione un Plan" name="txtPrograma" required>
+                                    <datalist id="datalistOptions">
+                                        <option value="Programa de Salud" @if($resultado->programa == 'programa_de_salud')selected @endif></option>
+                                        <option value="Programa Deportivo" @if($resultado->programa == 'programa_deportivo')selected @endif></option>
+                                        <option value="Programa Educacion y Cultura" @if($resultado->programa == 'programa_educacion_y_cultura')selected @endif></option>
+                                        <option value="Programa Social" @if($resultado->programa == 'programa_social')selected @endif></option>
+                                    </datalist>
+                                </div>
+                                
+                            </div>
+
+                            <div class="mb-3 col-md-6 ">
+                                <label for="example-date-input" class="col-md-6 col-form-label">Fecha</label>
+                                <div class="col-md-12">
+                                    <input class="form-control" type="date" name="txtFecha" value="{{$resultado->fecha}}"
+                                        id="example-date-input" required>
                                 </div>
                             </div>
+                            
+                            
                            
                         </div>
                         
@@ -208,13 +178,13 @@
 @section('script')
     
     <script src="{{URL::asset('/libs/dropzone/dropzone.min.js')}}"></script>
-    
-    <!--tinymce js-->
-    <script src="http://qovex-v.laravel.themesbrand.com/libs/tinymce/tinymce.min.js"></script>
-    <!-- init js -->
-    <script src="http://qovex-v.laravel.themesbrand.com/js/pages/form-editor.init.js"></script>
-    
 
 
+  
+
+    <script src="{{ URL::asset('/libs/tinymce/tinymce.min.js')}}"></script>
+
+<!-- init js -->
+    <script src="{{ URL::asset('/js/pages/form-editor.init.js')}}"></script>
 
 @endsection

@@ -107,7 +107,7 @@
                             <a class="post-author" href="{{route('blog.detalle',['id'=>$resultado->id])}}"><span class="icon"><img class="icon-img" src="{{asset('assets/images/icons/admin1.png')}}" alt="Icon-Image"></span>By: {{$resultado->escritor}}</a>
                             </div>
                             <h2 class="title">{{$resultado->titulo_1}}</h2>
-                            <p>{{$resultado->texto_1}}</p>                            
+                            <p>{!!$resultado->texto_1!!}</p>                            
                             <div class="blockquote-area">
                             <blockquote class="blockquote-style">
                                 <p>{{$resultado->comentario}}</p>
@@ -115,7 +115,7 @@
                             </blockquote>
                             </div>
                             <h2 class="title">{{$resultado->titulo_2}}</h2>
-                            <p>{{$resultado->texto_2}}</p>
+                            <p>{!!$resultado->texto_2!!}</p>
                             
                             <div class="row mb-32">
                                
@@ -144,7 +144,7 @@
                                 
                             </div>
                             <h2 class="title">{{$resultado->titulo_3}}</h2>
-                            <p>{{$resultado->texto_3}}</p>
+                            <p>{!!$resultado->texto_3!!}</p>
                             
                             
                         </div>

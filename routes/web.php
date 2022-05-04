@@ -183,9 +183,17 @@ Route::get('/donaciones/update/{id}', [donacionController::class, 'update'])->na
 
 Route::get('/blog', [blogController::class, 'indexBlog'])->name('adminBlog.index');
 Route::get('/blog/create', [blogController::class, 'create'])->name('adminBlog.create');
+Route::get('/blog/create2/{id}', [blogController::class, 'create2'])->name('adminBlog.create2');
+Route::get('/blog/create3/{id}', [blogController::class, 'create3'])->name('adminBlog.create3');
 Route::post('/blog/create', [blogController::class, 'insert'])->name('adminBlog.insert');
-Route::post('/blog/save', [blogController::class, 'save'])->name('adminBlog.save');
+Route::post('/blog/create2', [blogController::class, 'insert2'])->name('adminBlog.insert2');
+Route::post('/blog/create3', [blogController::class, 'insert3'])->name('adminBlog.insert3');
+Route::post('/blog/save', [blogController::class, 'save'])->name('adminBlog.save1');
+Route::post('/blog/save2', [blogController::class, 'save2'])->name('adminBlog.save2');
+Route::post('/blog/save3', [blogController::class, 'save3'])->name('adminBlog.save3');
 Route::get('/blog/update/{id}', [blogController::class, 'update'])->name('adminBlog.update');
+Route::get('/blog/update2/{id}', [blogController::class, 'update2'])->name('adminBlog.update2');
+Route::get('/blog/update3/{id}', [blogController::class, 'update3'])->name('adminBlog.update3');
 Route::get('/blog/{id}/{idB}', [blogController::class, 'deleteImage'])->name('adminBlogImage.eliminar');
 Route::get('/blog/{id}', [blogController::class, 'delete'])->name('adminBlog.delete');
 

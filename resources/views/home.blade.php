@@ -102,7 +102,7 @@
                         
                         @if(isset($imagenPrueba))
 
-                          <img class=""  src="{{$imagenPrueba->ruta}}" alt="Image-Givest" height="612" width="634" >
+                          <img class=""  src="{{$imagenPrueba->ruta}}" alt="Image-Givest"  >
                           
 
                         @else

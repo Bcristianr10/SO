@@ -95,11 +95,11 @@
         @foreach($resultado as $emprendimiento)
             <div class="col-md-6 col-lg-3">
                 <div class="causes-item mb-30">
-                <div class="thumb">
-                    <img src="{{$emprendimiento->imagen}}" alt="NUll">
+                <div class="" align="center" style="background-color: #F7F7F7">
+                    <img src="{{$emprendimiento->imagen}}" height="188" alt="NUll">
                 </div>
                 <div class="content">              
-                    <h4 class="title"><a href="causes-details.html">{{$emprendimiento->titulo}}.</a></h4>
+                    <h4 class="title"><a href="#">{{$emprendimiento->titulo}}.</a></h4>
                     <p>{!!$emprendimiento->descripcion!!}</p>
                 </div>
                 <div class="causes-footer">

@@ -21,13 +21,13 @@
                 <div class="card-body">
                     
                     <div class="row">
-                        <h4 class="card-title col-sm-4">Blog</h4>
+                        <h4 class="card-title col-sm-4">Actividades</h4>
                         <div class="col-sm-4 offset-sm-8">
                             
                             <a class="btn btn-primary waves-effect waves-light w-100" href="{{route('adminBlog.create')}}">
                                 
                                 <span class="btn-label"><i class="fa fa-plus"></i> </span><span class="btn-text">
-                                    Crear Blog
+                                    Crear Actividad
                                 </span>
                             </a>
                             

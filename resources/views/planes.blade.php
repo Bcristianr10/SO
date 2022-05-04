@@ -14,8 +14,12 @@
         $idioma = 'ESP';
         }
         use App\Http\Controllers\imagenesController; 
+
+        $nombre = 'banner_'.$plan;
         
-        $banner = imagenesController::traerImagen('banner_1');
+        $banner = imagenesController::traerImagen($nombre);
+
+        
     
     ?>
     <title>{!!idiomaController::traerTexto('programas',$idioma);!!} | Organización Sin Fronteras</title>
@@ -94,7 +98,7 @@
             <div class="">
                 <div class="blog-content-area post-items-style2">
                 
-                
+                  
 
                     <div class="post-details-content">
                         <div class="post-details-body">
