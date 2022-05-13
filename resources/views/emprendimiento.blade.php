@@ -92,13 +92,13 @@
     <section class="causes-area causes-default-area">
       <div class="container">
         <div class="row">
-        @foreach($resultado as $emprendimiento)
+          @foreach($resultado as $emprendimiento)
             <div class="col-md-6 col-lg-3">
-                <div class="causes-item mb-30">
+              <div class="causes-item mb-30" >
                 <div class="" align="center" style="background-color: #F7F7F7">
                     <img src="{{$emprendimiento->imagen}}" height="188" alt="NUll">
                 </div>
-                <div class="content">              
+                <div class="content" style="min-height: 220px;">              
                     <h4 class="title"><a href="#">{{$emprendimiento->titulo}}.</a></h4>
                     <p>{!!$emprendimiento->descripcion!!}</p>
                 </div>
@@ -109,11 +109,41 @@
                     </div>
                     
                 </div>
-                </div>
+              </div>
             </div>
-        @endforeach  
+          @endforeach 
+          @if ($resultado->lastPage()>1)
+            <div class="pagination-area pt-0 pb-0" style="margin-bottom: 20px;  ">
+              <nav>
+                <ul class="page-numbers">
+                  @if ($resultado->currentPage()>1)
+                    <li>
+                      <a class="page-number previus" href="{{$resultado->previousPageUrl()}}">
+                        <img src="{{asset('assets/images/icons/arrow-line-left-gradient.png')}}" alt="Icon-Image">
+                      </a>
+                    </li>
+                  @endif
+                  
+
+                  @for ($i = 1; $i <= $resultado->lastPage(); $i++)
+                    <li>
+                      <a class="page-number @if($resultado->currentPage()==$i) active @endif"  href="{{$resultado->url($i)}}">{{$i}}</a>
+                    </li>
+                  @endfor
+                  
+                  
+                  <li>
+                    <a class="page-number next" href="{{$resultado->nextPageUrl()}}">
+                      <img src="{{asset('assets/images/icons/arrow-line-right-gradient.png')}}" alt="Icon-Image">
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          @endif 
 
         </div>
+        
       </div>
     </section>
     <br><br><br>

@@ -118,7 +118,7 @@
 
                               @else
                                 @if ($plan == 'programa_educativo')
-                                  {!!idiomaController::traerTexto('texto1_programa_educativo',$idioma);!!}
+                                  {!!idiomaController::traerTexto('texto1_programa_de_educacion_y_cultura',$idioma);!!}
 
                                 @else
 

@@ -162,80 +162,104 @@
       <div class="container">
         <div class="row icon-box-style1" data-aos="fade-up" data-aos-duration="1000">
           <div class="col-md-6 col-lg-3">
-            <a href="{{route('plan.planes',['id'=>'programa_de_salud'])}}">
-              <div class="icon-box-item item-one mb-md-30"   style="background:linear-gradient(30deg, royalblue, #002C68);">
-                <div class="icon-box-top">
-                  <!-- <div class="icon-box">
-                    <img class="icon-img" src="{{asset('assets/images/icons/s1.png')}}" alt="Icon">
-                  </div> -->
-                  <h2 class="text-white" style="font-weight: bold;">{!!idiomaController::traerTexto('programa_de_salud',$idioma);!!}</h2>
+            
+            <div class="icon-box-item item-one mb-md-30"   style="background:linear-gradient(30deg, royalblue, #002C68);">
+              <div class="icon-box-top">
+                <!-- <div class="icon-box">
+                  <img class="icon-img" src="{{asset('assets/images/icons/s1.png')}}" alt="Icon">
+                </div> -->
+                <h2 class="text-white" style="font-weight: bold;">{!!idiomaController::traerTexto('programa_de_salud',$idioma);!!}</h2>
+              </div>
+              <div class="content">
+                <div class="separator-line">
+                  <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
                 </div>
-                <div class="content">
-                  <div class="separator-line">
-                    <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
+                <p style="display: flex; align-items: center; min-height: 230px;" class="text-center">{!!idiomaController::traerTexto('texto_programa_de_salud',$idioma);!!} </p>
+                <div class="causes-footer">
+                  
+                  <div>
+                    <a class="btn-theme btn-border-gradient gray-border btn-size-md" href="{{route('plan.planes',['id'=>'programa_de_salud'])}}"><span>{!!idiomaController::traerTexto('leer_mas',$idioma);!!}<img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right-gradient.png')}}" alt="Icon"></span></a>
                   </div>
-                  <p class="text-center">{!!idiomaController::traerTexto('texto_programa_de_salud',$idioma);!!} </p>
                   
                 </div>
               </div>
-            </a>
+            </div>
+            
           </div>
           <div class="col-md-6 col-lg-3">
-            <a href="{{route('plan.planes',['id'=>'programa_deportivo'])}}">
-              <div class="icon-box-item item-two mb-md-30" style="background:linear-gradient(30deg, #00c8fb,#00A0C9);">
-                <div class="icon-box-top">
-                  <!-- <div class="icon-box">
-                    <img class="icon-img" src="{{asset('assets/images/icons/s2.png')}}" alt="Icon">
-                  </div> -->
-                  <h2 class="text-white" style="font-weight: bold;">{!!idiomaController::traerTexto('programa_deportivo',$idioma);!!}</h2>
+            
+            <div class="icon-box-item item-two mb-md-30" style="background:linear-gradient(30deg, #00c8fb,#00A0C9);">
+              <div class="icon-box-top">
+                <!-- <div class="icon-box">
+                  <img class="icon-img" src="{{asset('assets/images/icons/s2.png')}}" alt="Icon">
+                </div> -->
+                <h2 class="text-white" style="font-weight: bold;">{!!idiomaController::traerTexto('programa_deportivo',$idioma);!!}</h2>
+              </div>
+              <div class="content">
+                <div class="separator-line">
+                  <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
                 </div>
-                <div class="content">
-                  <div class="separator-line">
-                    <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
+                <p style=" min-height: 230px; display: flex; align-items: center;" class="text-center">{!!idiomaController::traerTexto('texto_deporte',$idioma);!!}</p>
+                <div class="causes-footer">
+                
+                  <div>
+                    <a class="btn-theme btn-border-gradient gray-border btn-size-md" href="{{route('plan.planes',['id'=>'programa_deportivo'])}}"><span>{!!idiomaController::traerTexto('leer_mas',$idioma);!!}<img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right-gradient.png')}}" alt="Icon"></span></a>
                   </div>
-                  <p class="text-center">{!!idiomaController::traerTexto('texto_deporte',$idioma);!!}</p>
-                  <!-- <a href="causes-details.html" class="btn-theme btn-white btn-border btn-size-md">View Details <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right.png')}}" alt="Icon"></a> -->
+                  
                 </div>
               </div>
-            </a>
+            </div>
+            
           </div>
           <div class="col-md-6 col-lg-3">
-            <a href="{{route('plan.planes',['id'=>'programa_social'])}}">
-              <div class="icon-box-item item-three mb-md-30" style="background:linear-gradient(30deg, royalblue, #002C68);">
-                <div class="icon-box-top">
-                  <!-- <div class="icon-box">
-                    <img class="icon-img" src="{{asset('assets/images/icons/s2.png')}}" alt="Icon">
-                  </div> -->
-                  <h2 class="text-white" style="font-weight: bold;">{!!idiomaController::traerTexto('programa_social',$idioma);!!}</h2>
+            
+            <div class="icon-box-item item-three mb-md-30" style="background:linear-gradient(30deg, royalblue, #002C68);">
+              <div class="icon-box-top">
+                <!-- <div class="icon-box">
+                  <img class="icon-img" src="{{asset('assets/images/icons/s2.png')}}" alt="Icon">
+                </div> -->
+                <h2 class="text-white" style="font-weight: bold;">{!!idiomaController::traerTexto('programa_social',$idioma);!!}</h2>
+              </div>
+              <div class="content" >
+                <div class="separator-line">
+                  <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
                 </div>
-                <div class="content">
-                  <div class="separator-line">
-                    <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
+                <p style=" min-height: 230px; display: flex; align-items: center;" class="text-center">{!!idiomaController::traerTexto('texto_social',$idioma);!!}</p>
+                <div class="causes-footer " >
+              
+                  <div>
+                    <a class="btn-theme btn-border-gradient gray-border btn-size-md" href="{{route('plan.planes',['id'=>'programa_social'])}}" ><span>{!!idiomaController::traerTexto('leer_mas',$idioma);!!}<img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right-gradient.png')}}" alt="Icon"></span></a>
                   </div>
-                  <p>{!!idiomaController::traerTexto('texto_social',$idioma);!!}</p>
-                  <!-- <a href="causes-details.html" class="btn-theme btn-white btn-border btn-size-md">View Details <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right.png')}}" alt="Icon"></a> -->
+                  
                 </div>
               </div>
-            </a>
+            </div>
+            
           </div>
           <div class="col-md-6 col-lg-3">
-            <a href="{{route('plan.planes',['id'=>'programa_educativo'])}}">
-              <div class="icon-box-item item-two" style="background:linear-gradient(30deg, #00c8fb,#00A0C9);">
-                <div class="icon-box-top">
-                  <!-- <div class="icon-box">
-                    <img class="icon-img" src="{{asset('assets/images/icons/s3.png')}}" alt="Icon">
-                  </div> -->
-                  <h2 class="text-white" style="font-weight: bold;">{!!idiomaController::traerTexto('programa_educacion',$idioma);!!}</h2>
+            
+            <div class="icon-box-item item-two" style="background:linear-gradient(30deg, #00c8fb,#00A0C9);">
+              <div class="icon-box-top">
+                <!-- <div class="icon-box">
+                  <img class="icon-img" src="{{asset('assets/images/icons/s3.png')}}" alt="Icon">
+                </div> -->
+                <h2 class="text-white" style="font-weight: bold;">{!!idiomaController::traerTexto('programa_educacion',$idioma);!!}</h2>
+              </div>
+              <div class="content">
+                <div class="separator-line">
+                  <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
                 </div>
-                <div class="content">
-                  <div class="separator-line">
-                    <img src="{{asset('assets/images/shape/line-s1.png')}}" alt="Givest-HasTech">
+                <p class="text-center" style="display: flex; align-items: center;">{!!idiomaController::traerTexto('texto_educacion',$idioma);!!}</p>
+                <div class="causes-footer">
+            
+                  <div>
+                    <a class="btn-theme btn-border-gradient gray-border btn-size-md" href="{{route('plan.planes',['id'=>'programa_educativo'])}}"><span>{!!idiomaController::traerTexto('leer_mas',$idioma);!!}<img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right-gradient.png')}}" alt="Icon"></span></a>
                   </div>
-                  <p>{!!idiomaController::traerTexto('texto_educacion',$idioma);!!}</p>
-                  <!-- <a href="causes-details.html" class="btn-theme btn-white btn-border btn-size-md">View Details <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right.png')}}" alt="Icon"></a> -->
+                  
                 </div>
               </div>
-            </a>
+            </div>
+            
           </div>
         </div>
       </div>

@@ -98,7 +98,7 @@
               
                 <img src="{{$donacion->imagen}}" alt="Givest-HasTech">
               </div>
-              <div class="content">
+              <div class="content" style="min-height: 200px;">
                 <ul class="donate-info">
                   <li class="info-item">
                     <span class="info-title">{!!idiomaController::traerTexto('monto',$idioma);!!}</span>
@@ -111,7 +111,7 @@
               </div>
               <div class="causes-footer">
                 <div class="admin">
-                  <h5><a href="causes.html"><span class="icon-img"><img src="{{asset('assets/images/icons/admin1.png')}}" alt="Icon"></span>{{$donacion->nombre}}</a></h5>
+                  <h5><a href="#"><span class="icon-img"><img src="{{asset('assets/images/icons/admin1.png')}}" alt="Icon"></span>{{$donacion->nombre}}</a></h5>
                 </div><br>
                 <div>
                 <a class="btn-theme btn-border-gradient gray-border btn-size-md" href="{{route('contact')}}"><span>{!!idiomaController::traerTexto('donaYa',$idioma);!!}<img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right-gradient.png')}}" alt="Icon"></span></a>

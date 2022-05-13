@@ -97,7 +97,7 @@
                 @foreach ($resultado as $fila)
                     <div class="post-item col-6">
                         <div class="thumb">
-                            <a href="{{route('blog.detalle',['id'=>$fila->id])}}"><img src="{{$fila->principal()->ruta}}" alt="Givest-Blog"></a>
+                            <a href="{{route('blog.detalle',['id'=>$fila->slug])}}"><img src="{{$fila->principal()->ruta}}" alt="Givest-Blog"></a>
                             <div class="meta-date">
                             <a href="blog.html"><span>{{Carbon\Carbon::parse($fila->fecha)->format('d')}}</span> {!!idiomaController::traerTexto(Carbon\Carbon::parse($fila->fecha)->format('M'),$idioma);!!}</a>
                             </div>
@@ -110,10 +110,10 @@
                                 <a class="post-author" href="blog.html"><span class="icon"><img class="icon-img" src="{{asset('assets/images/icons/admin1.png')}}" alt="Icon-Image"></span>By: {{$fila->escritor}}</a>
                             </div>
                             <h4 class="title">
-                                <a href="{{route('blog.detalle',['id'=>$fila->id])}}">{{$fila->titulo_1}}</a>
+                                <a href="{{route('blog.detalle',['id'=>$fila->slug])}}">{{$fila->titulo_1}}</a>
                             </h4>
                             <p>{{$fila->resena}}</p>
-                            <a href="{{route('blog.detalle',['id'=>$fila->id])}}" class="btn-theme btn-border-gradient btn-size-md"><span>{!!idiomaController::traerTexto('leer_mas',$idioma);!!} <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right-gradient.png')}}" alt="Icon"></span></a>
+                            <a href="{{route('blog.detalle',['id'=>$fila->slug])}}" class="btn-theme btn-border-gradient btn-size-md"><span>{!!idiomaController::traerTexto('leer_mas',$idioma);!!} <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right-gradient.png')}}" alt="Icon"></span></a>
                             </div>
                         </div>
                     </div>

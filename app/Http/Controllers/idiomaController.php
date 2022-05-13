@@ -205,8 +205,9 @@ class idiomaController extends Controller
         if ($texto) {
             return $texto->texto;
 
-        } else {
-            return 'sin texto';
+        } else {            
+
+            return idiomaController::traerTexto('sin_texto',$idioma);
         }
         
         

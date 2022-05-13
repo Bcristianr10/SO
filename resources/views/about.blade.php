@@ -111,20 +111,20 @@
             </div>
             <div class="content-box-wrp">
               <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6" >
                   <div class="content-box-item mb-md-30">
                     <h3 class="title">{!!idiomaController::traerTexto('mision',$idioma);!!}</h3>
                     <img class="img-line-shape" src="{{asset('assets/images/shape/line-s1.png')}}" alt="Image-Givest">
-                    <p>{!!idiomaController::traerTexto('texto_mision',$idioma);!!}</p>
+                    <p style="min-height: 245px; display: flex; align-items: center;">{!!idiomaController::traerTexto('texto_mision',$idioma);!!}</p>
                     
                     <img class="bg-line-shape" src="{{asset('assets/images/shape/line5.png')}}" alt="Image-Givest">
                   </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6" >
                   <div class="content-box-item" data-bg-color="#00a0c9">
                     <h3 class="title">{!!idiomaController::traerTexto('vision',$idioma);!!}</h3>
                     <img class="img-line-shape" src="{{asset('assets/images/shape/line-s1.png')}}" alt="Image-Givest">
-                    <p>{!!idiomaController::traerTexto('texto_vision',$idioma);!!}</p>
+                    <p style="min-height: 245px; display: flex; align-items: center;">{!!idiomaController::traerTexto('texto_vision',$idioma);!!}</p>
                     
                     <img class="bg-line-shape" src="{{asset('assets/images/shape/line5.png')}}" alt="Image-Givest">
                   </div>

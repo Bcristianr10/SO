@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use App\Models\blog;
 use App\Models\fotoBlog;
 
@@ -11,14 +12,16 @@ class blogController extends Controller
 {
     public function index(){
 
-        $resultado = blog::paginate(6);
+               
+
+        $resultado = blog::orderBy('fecha','DESC')->paginate(6);
        
         return view('blog',['resultado'=>$resultado]);
     }
 
     public function detalle($id){
 
-        $resultado = blog::find($id);
+        $resultado = blog::where('slug', $id)->firstOrFail();
         
         return view('detalle',['resultado'=>$resultado]);
     }
@@ -62,7 +65,8 @@ class blogController extends Controller
                 if($file != null){
 
                     $obj_blog = new blog();
-                    $obj_blog->titulo_1 = $request->txtTitulo1;     
+                    $obj_blog->titulo_1 = $request->txtTitulo1;
+                    $obj_blog->slug = Str::slug($obj_blog->titulo_1,'_');     
                     $obj_blog->resena = $request->txtResena;          
                     $obj_blog->comentario = $request->comentario;  
                     $obj_blog->texto_1 = $request->textoUno;                               
@@ -298,7 +302,8 @@ class blogController extends Controller
                 
 
                 $obj_blog = blog::find($request->txtId);
-                $obj_blog->titulo_1 = $request->txtTitulo1;     
+                $obj_blog->titulo_1 = $request->txtTitulo1; 
+                $obj_blog->slug = Str::slug($obj_blog->titulo_1,'_');     
                 $obj_blog->resena = $request->txtResena;          
                 $obj_blog->comentario = $request->comentario;  
                 $obj_blog->texto_1 = $request->textoUno;                              
