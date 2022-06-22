@@ -9,13 +9,24 @@
     <?php 
       use App\Http\Controllers\imagenesController; 
       use App\Http\Controllers\idiomaController; 
+    
+
       if (Session::has('idioma')){
+
         $idioma = Session::get('idioma');
+        
+        
+        
       }else{
-        $idioma = 'ESP';
+
+        Session::put('idioma', 'ESP');
+
+        $idioma = Session::get('idioma');
+        
       }
       $imagenPrueba = imagenesController::traerImagen('principal_1');
 
+ 
     
     ?>
 
@@ -168,7 +179,7 @@
                 <!-- <div class="icon-box">
                   <img class="icon-img" src="{{asset('assets/images/icons/s1.png')}}" alt="Icon">
                 </div> -->
-                <h2 class="text-white" style="font-weight: bold;">{!!idiomaController::traerTexto('programa_de_salud',$idioma);!!}</h2>
+                <h2 class="text-white" style="font-weight: bold;">{!!idiomaController::traerTexto('programa_de_salud',$idioma);!!} </h2>
               </div>
               <div class="content">
                 <div class="separator-line">

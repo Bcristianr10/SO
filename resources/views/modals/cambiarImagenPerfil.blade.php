@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title align-self-center"
-                    id="myLargeModalLabel">Cambiar Imagen</h5>
+                    id="myLargeModalLabel">Editar Perfil</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                      </button>
@@ -25,7 +25,22 @@
                         <div class="mb-3 col-md-12 ">
                             <label for="example-email-input1" class="form-label pt-0">Nueva Imagen</label>
                             <div class="">
-                                <input type="file" name="imagen" id="input-file-now" class="dropify" required accept="image/*"/>  
+                                <input type="file" name="imagen" id="input-file-now" class="dropify" accept="image/*"/>  
+                            </div>
+                        </div>
+                        <div class="mb-3 col-md-12 ">
+                            <label for="example-email-input1" class="form-label pt-0">Nombres</label>
+                            <div class="">
+                                <input class="form-control" type="input" value="{{$dato->nombres}}"
+                                id="example-email-input1" name="txtNombres" required placeholder="Ingrese el Nombre">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col-md-12 ">
+                            <label for="example-email-input1" class="form-label pt-0">Apellidos</label>
+                            <div class="">
+                                <input class="form-control" type="input" value="{{$dato->apellidos}}"
+                                id="example-email-input1" name="txtApellidos" required placeholder="Ingrese el Nombre">
                             </div>
                         </div>
                 

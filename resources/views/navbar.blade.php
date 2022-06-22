@@ -35,8 +35,14 @@
                   <li @if (Request::is('/')) class="active"  @endif><a href="{{route('index')}}">{{$inicio}}</a></li>
                   <li @if (Request::is('aboutUs')) class="active"  @endif><a href="{{route('about')}}">{!!idiomaController::traerTexto('nosotros',$idioma);!!}</a></li>
                   <li @if (Request::is('contact')) class="active"  @endif><a href="{{route('contact')}}">{!!idiomaController::traerTexto('contactanos',$idioma);!!}</a></li>  
-                  <li @if (Request::is('actividades')) class="active"  @endif><a href="{{route('blog.index')}}">{!!idiomaController::traerTexto('actividades',$idioma);!!}</a></li>
-
+                  
+                  <li @if (Request::is('actividades')) class="active has-submenu" @elseif (Request::is('actividades')) class="active has-submenu" @else class="has-submenu"@endif><a>{!!idiomaController::traerTexto('actividades',$idioma);!!}</a>
+                    <ul class="submenu-nav">
+                      <li ><a href="{{route('blog.index')}}">{!!idiomaController::traerTexto('actividades',$idioma);!!}</a></li>
+                      <li ><a href="{{route('blog.anuncios')}}">{!!idiomaController::traerTexto('anuncios',$idioma);!!}</a></li>
+                      
+                    </ul>
+                  </li>
                   
                   
                   <li @if (Request::is('emprendimiento')) class="active has-submenu" @elseif (Request::is('donacion')) class="active has-submenu" @else class="has-submenu"@endif><a>{!!idiomaController::traerTexto('mas',$idioma);!!}</a>

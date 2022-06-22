@@ -7,19 +7,42 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\Models\blog;
 use App\Models\fotoBlog;
+use Carbon\Carbon;
+
+use Session;
 
 class blogController extends Controller
 {
     public function index(){
 
-               
+        $idioma = Session::get('idioma');
+        
 
-        $resultado = blog::orderBy('fecha','DESC')->paginate(6);
+        $fecha = Carbon::now();        
+
+        $resultado = blog::where('fecha','<',$fecha)->orderBy('fecha','DESC')->where('idioma',$idioma)->paginate(6);
+       
+        return view('blog',['resultado'=>$resultado]);
+    }
+
+    public function anuncioIndex(){
+
+        $fecha = Carbon::now();
+        $idioma = Session::get('idioma');       
+
+        $resultado = blog::where('fecha','>',$fecha)->orderBy('fecha','ASC')->where('idioma',$idioma)->paginate(6);
        
         return view('blog',['resultado'=>$resultado]);
     }
 
     public function detalle($id){
+
+        $resultado = blog::where('slug', $id)->firstOrFail();
+        
+        return view('detalle',['resultado'=>$resultado]);
+    }
+
+    public function anuncio($id){
 
         $resultado = blog::where('slug', $id)->firstOrFail();
         
@@ -74,6 +97,7 @@ class blogController extends Controller
                     $obj_blog->escritor = $request->escritor;          
                     $obj_blog->programa = str_replace(" ", "_", $request->txtPrograma);
                     $obj_blog->fecha = $request->txtFecha; 
+                    $obj_blog->idioma = $request->txtIdioma;
 
                     $obj_blog->save(); 
 
@@ -298,7 +322,7 @@ class blogController extends Controller
             if(Auth::user()->rol_id == 1){
 
                 
-
+                
                 
 
                 $obj_blog = blog::find($request->txtId);
@@ -306,7 +330,8 @@ class blogController extends Controller
                 $obj_blog->slug = Str::slug($obj_blog->titulo_1,'_');     
                 $obj_blog->resena = $request->txtResena;          
                 $obj_blog->comentario = $request->comentario;  
-                $obj_blog->texto_1 = $request->textoUno;                              
+                $obj_blog->texto_1 = $request->textoUno;
+                $obj_blog->idioma = $request->txtIdioma;                              
                             
                 $obj_blog->escritor = $request->escritor; 
                 if(isset($request->txtPrograma)){

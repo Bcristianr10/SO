@@ -571,16 +571,16 @@ table p {
   width: auto;
 }
 .btn-theme:hover, .btn-theme:focus {
-  background-color: #fe44ee;
-  border-color: #fe44ee;
+  background-color: #002C68;
+  border-color: #002C68;
   color: #fff;
 }
 .btn-theme:hover .icon, .btn-theme:focus .icon {
   right: 40px;
 }
 .btn-theme.btn-theme-color2 {
-  background-color: #fe44ee;
-  border-color: #fe44ee;
+  background-color: #002C68;
+  border-color: #002C68;
 }
 .btn-theme.btn-theme-color2:hover, .btn-theme.btn-theme-color2:focus {
   background-color: #39a4fc;
@@ -648,12 +648,12 @@ table p {
 }
 .btn-theme.btn-border.btn-theme-color2 {
   background-color: transparent;
-  border-color: #fe44ee;
-  color: #fe44ee;
+  border-color: #002C68;
+  color: #002C68;
 }
 .btn-theme.btn-border.btn-theme-color2:hover {
-  background-color: #fe44ee;
-  border-color: #fe44ee;
+  background-color: #002C68;
+  border-color: #002C68;
   color: #fff;
 }
 .btn-theme.btn-border.btn-gray {
@@ -966,7 +966,7 @@ table p {
   font-weight: 400;
 }
 .page-title-area .page-title-content .bread-crumbs {
-  color: #fe44ee;
+  color: #002C68;
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 8px;
@@ -1207,7 +1207,7 @@ table p {
 
 /*-------- Custom Color Style Css --------*/
 .bgcolor-theme2 {
-  background-color: #fe44ee !important;
+  background-color: #002C68 !important;
 }
 
 .bgcolor-theme3 {
@@ -2394,7 +2394,7 @@ table p {
 }
 .has-submenu > a:before {
   content: "";
-  color: #fe44ee;
+  color: #002C68;
   font-size: 14px;
   line-height: 30px;
   font-family: "FontAwesome";
@@ -3062,7 +3062,7 @@ table p {
   width: 35px;
 }
 .header-action-area button.btn-menu span, .header-action-area a.btn-menu span {
-  background-color: #fe44ee;
+  background-color: #002C68;
   border-radius: 2px;
   display: block;
   height: 3px;
@@ -3652,7 +3652,7 @@ table p {
   }
 }
 .home-slider-area.slider-default .slider-content-area .content .btn-wrp .btn-theme.btn-black.btn-border:hover {
-  border-color: #fe44ee;
+  border-color: #002C68;
   color: #fff;
   overflow: hidden;
   position: relative;
@@ -3824,7 +3824,7 @@ table p {
   position: absolute;
   width: 340px;
   background: var(--primary-color);
-  background-image: -ms-linear-gradient(-30deg, #39a4fc 0%, #fe44ee 100%);
+  background-image: -ms-linear-gradient(-30deg, #39a4fc 0%, #002C68 100%);
   background: linear-gradient(-30deg, var(--secondary-color) 0%, var(--primary-color) 100%);
 }
 @media (max-width: 1799px) {
@@ -4965,13 +4965,13 @@ table p {
   height: 7px;
 }
 .causes-details .progress-item .progress-line .progress-bar-line {
-  background-color: #fe44ee;
+  background-color: #002C68;
   border-radius: 0;
   overflow: visible !important;
   position: relative;
 }
 .causes-details .progress-item .progress-line .progress-bar-line:after {
-  background-color: #fe44ee;
+  background-color: #002C68;
   border-radius: 50%;
   content: "";
   height: 15px;
@@ -5667,7 +5667,7 @@ table p {
   animation: wave-button 2s infinite 0.1s linear backwards;
 }
 .btn-play.wave-btn span:nth-child(2) {
-  background: #fe44ee;
+  background: #002C68;
   animation: wave-button 3s infinite 0.5s linear backwards;
 }
 .btn-play.wave-btn span:nth-child(3) {
@@ -5818,8 +5818,8 @@ table p {
   top: 0;
   width: 100%;
   background: var(--primary-color);
-  background-image: -ms-linear-gradient(-30deg, #39a4fc 0%, #fe44ee 100%);
-  background: linear-gradient(-30deg, #39a4fc 0%, #fe44ee 100%);
+  background-image: -ms-linear-gradient(-30deg, #39a4fc 0%, #002C68 100%);
+  background: linear-gradient(-30deg, #39a4fc 0%, #002C68 100%);
 }
 .testimonial-area.testimonial-default-area .title-wrp .section-title {
   margin-bottom: 33px;
@@ -6460,7 +6460,7 @@ table p {
   -o-transition: 0.1s;
 }
 .donate-form form .btn-gradient.btn-border:hover {
-  border-color: #fe44ee;
+  border-color: #002C68;
 }
 .donate-form form .btn-gradient.btn-border:hover:after {
   border: none;
@@ -7026,7 +7026,7 @@ table p {
   }
 }
 .donation-form form .btn-gradient.btn-border:hover {
-  border-color: #fe44ee;
+  border-color: #002C68;
 }
 .donation-form form .btn-wrp {
   display: flex;
@@ -7724,7 +7724,7 @@ table p {
   }
 }
 .post-items-style2 .post-item .content .meta .post-category:hover {
-  background-color: #fe44ee;
+  background-color: #002C68;
 }
 .post-items-style2 .post-item .content .meta .post-author {
   color: #595959;
@@ -8040,7 +8040,7 @@ table p {
   }
 }
 .post-details-content .post-details-body .content .meta .post-category:hover {
-  background-color: #fe44ee;
+  background-color: #002C68;
 }
 .post-details-content .post-details-body .content .meta .post-author {
   color: #595959;
@@ -8643,7 +8643,7 @@ table p {
   }
 }
 .widget-causes-item .content .amount-info .donate-amount.active, .widget-causes-item .content .amount-info .donate-amount:hover {
-  border-color: #fe44ee;
+  border-color: #002C68;
   color: #fff;
   cursor: pointer;
   background: var(--primary-color);

@@ -161,6 +161,8 @@ Route::get('/texto/editar/{id}', [idiomaController::class, 'edit'])->name('texto
 
 
 Route::get('/actividades', [blogController::class, 'index'])->name('blog.index');
+Route::get('/anuncios', [blogController::class, 'anuncioIndex'])->name('blog.anuncios');
+Route::get('/anuncios/{id}', [blogController::class, 'anuncio'])->name('blog.anuncio');
 Route::get('/actividades/{id}', [blogController::class, 'detalle'])->name('blog.detalle');
 
 

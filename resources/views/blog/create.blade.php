@@ -75,7 +75,7 @@
 
                            
 
-                            <div class="mb-3 col-md-6">
+                            <div class="mb-3 col-md-4">
                                 <label class="col-md-6 col-form-label">Programa</label>
                                 <div class="col-md-12">
                                     <input class="form-control" list="datalistOptions" id="exampleDataList"
@@ -89,8 +89,20 @@
                                 </div>
                                 
                             </div>
+                            <div class="mb-3 col-md-4 ">
+                                <label for="example-date-input" class="col-md-6 col-form-label">Idioma</label>
+                                <div class="col-md-12">
+                                    <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                    placeholder="Seleccione un Plan" name="txtPrograma" required>
+                                    <datalist id="datalistOptions">
+                                        <option value="ESP">Español</option>
+                                        <option value="ENG">Ingles</option>
+                                        
+                                    </datalist>
+                                </div>
+                            </div>
 
-                            <div class="mb-3 col-md-6 ">
+                            <div class="mb-3 col-md-4 ">
                                 <label for="example-date-input" class="col-md-6 col-form-label">Fecha</label>
                                 <div class="col-md-12">
                                     <input class="form-control" type="date" name="txtFecha"

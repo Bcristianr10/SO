@@ -94,22 +94,36 @@
 
                            
 
-                            <div class="mb-3 col-md-6">
+                            <div class="mb-3 col-md-4">
                                 <label class="col-md-6 col-form-label">Programa</label>
                                 <div class="col-md-12">
-                                    <input class="form-control" list="datalistOptions" id="exampleDataList"
-                                    placeholder="Seleccione un Plan" name="txtPrograma" required>
-                                    <datalist id="datalistOptions">
-                                        <option value="Programa de Salud" @if($resultado->programa == 'programa_de_salud')selected @endif></option>
-                                        <option value="Programa Deportivo" @if($resultado->programa == 'programa_deportivo')selected @endif></option>
-                                        <option value="Programa Educacion y Cultura" @if($resultado->programa == 'programa_educacion_y_cultura')selected @endif></option>
-                                        <option value="Programa Social" @if($resultado->programa == 'programa_social')selected @endif></option>
-                                    </datalist>
+                                    
+                                    <select class="form-control" name="txtPrograma" aria-label="Default select example" required>
+                                        <option value="Programa de Salud" @if($resultado->programa == 'programa_de_salud')selected @endif>Programa de Salud</option>
+                                        <option value="Programa Deportivo" @if($resultado->programa == 'programa_deportivo')selected @endif>Programa Deportivo</option>
+                                        <option value="Programa Educacion y Cultura" @if($resultado->programa == 'programa_educacion_y_cultura')selected @endif>Programa Educacion y Cultura</option>
+                                        <option value="Programa Social" @if($resultado->programa == 'programa_social')selected @endif>Programa Social</option>
+                                    </select>
                                 </div>
                                 
                             </div>
 
-                            <div class="mb-3 col-md-6 ">
+                            <div class="mb-3 col-md-4">
+                                <label class="col-md-6 col-form-label">Idioma</label>
+                                <div class="col-md-12">
+                                    <select class="form-control" name="txtIdioma" aria-label="Default select example" required>
+                                        
+                                        
+                                        <option value="ESP" @if($resultado->idioma == 'ESP') selected @endif>Español</option>
+                                        <option value="ENG" @if($resultado->idioma == 'ENG') selected @endif>Ingles</option>
+                                        
+                                    </select>
+                                   
+                                </div>
+                                
+                            </div>
+
+                            <div class="mb-3 col-md-4 ">
                                 <label for="example-date-input" class="col-md-6 col-form-label">Fecha</label>
                                 <div class="col-md-12">
                                     <input class="form-control" type="date" name="txtFecha" value="{{$resultado->fecha}}"

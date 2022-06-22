@@ -94,22 +94,37 @@
 
                            
 
-                            <div class="mb-3 col-md-6">
+                            <div class="mb-3 col-md-4">
                                 <label class="col-md-6 col-form-label">Programa</label>
                                 <div class="col-md-12">
-                                    <input class="form-control" list="datalistOptions" id="exampleDataList"
-                                    placeholder="Seleccione un Plan" name="txtPrograma" required>
-                                    <datalist id="datalistOptions">
-                                        <option value="Programa de Salud"></option>
-                                        <option value="Programa Deportivo"></option>
-                                        <option value="Programa Educacion y Cultura"></option>
-                                        <option value="Programa Social"></option>
-                                    </datalist>
+                                    
+                                    <select class="form-control" name="txtPrograma" aria-label="Default select example">
+                                        
+                                    
+                                        <option value="Programa de Salud">Programa de Salud</option>
+                                        <option value="Programa Deportivo">Programa Deportivo</option>
+                                        <option value="Programa Educacion y Cultura">Programa Educacion y Cultura</option>
+                                        <option value="Programa Social">Programa Social</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <div class="mb-3 col-md-4">
+                                <label class="col-md-6 col-form-label">Idioma</label>
+                                <div class="col-md-12">
+                                    <select class="form-control" name="txtIdioma" aria-label="Default select example">
+                                        
+                                        
+                                        <option value="ESP">Español</option>
+                                        <option value="ENG">Ingles</option>
+                                        
+                                    </select>
+                                   
                                 </div>
                                 
                             </div>
 
-                            <div class="mb-3 col-md-6 ">
+                            <div class="mb-3 col-md-4 ">
                                 <label for="example-date-input" class="col-md-6 col-form-label">Fecha</label>
                                 <div class="col-md-12">
                                     <input class="form-control" type="date" name="txtFecha"

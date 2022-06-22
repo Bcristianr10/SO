@@ -43,7 +43,8 @@
                                     
                                     <th>Titulo</th>   
                                     <th>Escritor</th>
-                                    <th>Programa</th>                                                              
+                                    <th>Programa</th>
+                                    <th>Idioma</th>                                                              
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -56,6 +57,16 @@
                                         <td>{{$fila->titulo_1}}</td>
                                         <td>{{$fila->escritor}}</td>                                       
                                         <td>{{$fila->programa}}</td>
+                                        <td>@if ($fila->idioma == 'ESP')
+
+                                                Español
+                                            
+                                            @else
+
+                                                Ingles
+                                            
+                                            @endif
+                                        </td>
                                         <td>
                                             
                                                 <a class="btn btn-primary btn-sm" href="{{route('adminBlog.update',['id'=>$fila->id])}}">

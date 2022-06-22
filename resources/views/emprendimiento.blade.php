@@ -79,8 +79,12 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="page-title-content text-center">
-              <h2 class="title text-white">{!!idiomaController::traerTexto('emprendimiento',$idioma);!!}</h2>
-              <div class="bread-crumbs"><a href="index.html">{!!idiomaController::traerTexto('inicio',$idioma);!!}<span class="breadcrumb-sep">//</span></a><span class="active">{!!idiomaController::traerTexto('emprendimiento',$idioma);!!}</span></div>
+              
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="page-title-content text-center">
+              
             </div>
           </div>
         </div>

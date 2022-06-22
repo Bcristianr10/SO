@@ -14,8 +14,19 @@
         $idioma = 'ESP';
         }
         use App\Http\Controllers\imagenesController; 
+
+        if (request()->is('actividades')) {
+          
+          $banner = imagenesController::traerImagen('banner_actividades');
+
+        } else {
+          
+          $banner = imagenesController::traerImagen('banner_anuncios');
+
+        }
         
-        $banner = imagenesController::traerImagen('banner_1');
+        
+        
     
     ?>
     <title>{!!idiomaController::traerTexto('actividades',$idioma);!!} | Organización Sin Fronteras</title>
@@ -77,8 +88,12 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="page-title-content text-center">
-              <h2 class="title text-white">{!!idiomaController::traerTexto('actividades',$idioma);!!}</h2>
-              <div class="bread-crumbs"><a href="{{route('index')}}">{!!idiomaController::traerTexto('inicio',$idioma);!!}<span class="breadcrumb-sep">//</span></a><span class="active">{!!idiomaController::traerTexto('actividades',$idioma);!!}</span></div>
+              
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="page-title-content text-center">
+              
             </div>
           </div>
         </div>
@@ -113,7 +128,15 @@
                                 <a href="{{route('blog.detalle',['id'=>$fila->slug])}}">{{$fila->titulo_1}}</a>
                             </h4>
                             <p>{{$fila->resena}}</p>
-                            <a href="{{route('blog.detalle',['id'=>$fila->slug])}}" class="btn-theme btn-border-gradient btn-size-md"><span>{!!idiomaController::traerTexto('leer_mas',$idioma);!!} <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right-gradient.png')}}" alt="Icon"></span></a>
+                            <a href="
+                            @if(request()->is('actividades'))
+                              {{route('blog.detalle',['id'=>$fila->slug])}}
+                            @else
+                              {{route('blog.anuncio',['id'=>$fila->slug])}}
+                            @endif
+
+                            
+                              " class="btn-theme btn-border-gradient btn-size-md"><span>{!!idiomaController::traerTexto('leer_mas',$idioma);!!} <img class="icon icon-img" src="{{asset('assets/images/icons/arrow-line-right-gradient.png')}}" alt="Icon"></span></a>
                             </div>
                         </div>
                     </div>
