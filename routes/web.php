@@ -14,6 +14,7 @@ use App\Http\Controllers\idiomaController;
 use App\Http\Controllers\blogController;
 use App\Http\Controllers\emprendimientoController;
 use App\Http\Controllers\donacionController;
+use App\Http\Controllers\visitasController;
 
 
 /*
@@ -85,6 +86,8 @@ Route::get('/bloquear/perfilAdulto/{id}', [baseDatosController::class, 'bloquear
 Route::get('/activar/perfilHijo/{id}', [baseDatosController::class, 'activarPerfilHijo'])->name('activar.perfilHijo');
 // Route::get('/eliminar/perfilHijo/{id}', [baseDatosController::class, 'eliminarPerfilHijo'])->name('eliminar.perfilHijo');
 
+
+Route::get('/visitas', [visitasController::class, 'index'])->name('visitas.index');
 
 
 Route::get('/estados', [estadosController::class, 'index'])->name('estado.index');
@@ -207,7 +210,7 @@ Route::get('/blog/{id}', [blogController::class, 'delete'])->name('adminBlog.del
 
 
 Route::get('/plan/{id}', [blogController::class, 'planes'])->name('plan.planes');
-
+Route::post('/buscar/visitas', [visitasController::class, 'buscar'])->name('buscar.visitas');
 
 
 

@@ -21,12 +21,14 @@ use App\Models\ocupacion;
 use App\Models\estado;
 use App\Models\mensaje;
 use App\Models\padreHijo;
+use App\Models\visita;
 use App\Models\User;
 use App\Notifications\nuevoMensaje;
 use App\Notifications\nuevoUsuario;
 use App\Mail\notificationsMailable;
 
-
+use Session;
+use Carbon\Carbon;
 
 class Controller extends BaseController
 {
@@ -34,7 +36,8 @@ class Controller extends BaseController
 
     public function index(){
 
-
+        
+        Controller::validarVisita();
 
         return view('home');
             
@@ -45,7 +48,7 @@ class Controller extends BaseController
     public function aboutUs(){
 
 
-
+        Controller::validarVisita();
         return view('about');
             
      
@@ -54,8 +57,8 @@ class Controller extends BaseController
     
     public function contact(){
 
-
-
+        Controller::validarVisita();
+        
         return view('contact');
             
      
@@ -429,6 +432,35 @@ class Controller extends BaseController
         
 
         return 'se envio el correo';
+    }
+
+    public static function validarVisita(){
+
+        $id = Session::getId();
+
+        $existe = visita::find($id);
+
+        if (!isset($existe)) {
+        
+            $hoy = Carbon::now();
+
+            
+            $numero = $hoy->format('m');
+            $ano = $hoy->format('Y');
+
+            $obj_visita = new visita();
+            $obj_visita->id = $id;
+            $obj_visita->mes = $numero;
+            $obj_visita->ano = $ano;
+           
+
+            $obj_visita->save();       
+
+            
+            
+        }
+         
+
     }
 
   

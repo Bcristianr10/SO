@@ -10,6 +10,7 @@ use App\Models\rol;
 use App\Models\notification;
 use App\Notifications\nuevoUsuario;
 use Carbon\Carbon;
+use Intervention\Image\ImageManager;
 
 class usuarioController extends Controller
 {
@@ -292,7 +293,13 @@ class usuarioController extends Controller
             
             
             $file = $request->file('imagen');
-            if($file != null){                
+
+            
+            if($file != null){  
+                
+                $img = ImageManager::make($file)->resize(300, 200);
+
+                return $img;
 
 
                 $file_name = now()->toArray()['day'].'_'.now()->toArray()['month'].'_'.mt_rand(1000,10000);

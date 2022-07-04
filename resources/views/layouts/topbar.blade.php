@@ -113,11 +113,11 @@
                 <div class="dropdown d-inline-block">
                     <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img class="rounded-circle header-profile-user"
-                        @if (Auth::user()->imagen_url == null)
-                        src="{{asset('assets/images/perfilVacio.png')}}"
-                    @else
-                        src="{{Auth::user()->imagen_url}}"
-                    @endif                    
+                            @if (Auth::user()->imagen_url == null)
+                                src="{{asset('assets/images/perfilVacio.png')}}"
+                            @else
+                                src="{{Auth::user()->imagen_url}}"
+                            @endif                    
                         alt="Header Avatar">
                         <span class="d-none d-xl-inline-block ml-1">{{Auth::user()->nombre}}</span>
                         <i class="fa fa-angle-down d-none d-xl-inline-block"></i>

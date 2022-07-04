@@ -88,7 +88,7 @@
                             <li><a href="/emprendimientos">Emprendimientos</a></li>
                             <li><a href="/donaciones">Donaciones</a></li>
                             <li><a href="/blog">Actividades</a></li>
-                            
+                            <li><a href="/visitas">Visitas</a></li>
                         </ul>
                     </li>
                     

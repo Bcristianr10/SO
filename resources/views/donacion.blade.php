@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="La Organización Sin Fronteras, es una organización no gubernamental, sin fines de lucro y con fin social, que tiene {{\Carbon\Carbon::parse('01-01-2019')->age}} años funcionando en la Chorrera, Provincia de Panamá Oeste."/>
     <?php 
       
       use App\Http\Controllers\idiomaController; 
